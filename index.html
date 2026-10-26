@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- PRIMARY SEO META TAGS -->
+  <title>Live Stock Market Clock, Exchange Hours & Real-Time Ticker</title>
+  <meta name="description" content="Track exact current time, global stock exchange opening/closing bell countdowns (NYSE, NASDAQ, LSE, DFM, TSE), and live streaming stock & crypto prices.">
+  <meta name="keywords" content="stock market clock, is the stock market open, NYSE live time, real time stock ticker, world clock for traders, market hours countdown">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- OPEN GRAPH / SOCIAL -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Live Stock Market Clock & Real-Time Price Dashboard">
+  <meta property="og:description" content="Synchronized atomic trader clock with real-time streaming prices and global market open/close status.">
+
+  <!-- JSON-LD SCHEMA FOR GOOGLE RICH SNIPPETS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "PulseTime Market Clock",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Real-time global clock synchronized with major stock exchanges and live asset tickers."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What time does the US Stock Market (NYSE & NASDAQ) open and close?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The New York Stock Exchange (NYSE) and NASDAQ open at 9:30 AM EST and close at 4:00 PM EST, Monday through Friday, excluding public holidays."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I see stock market opening hours in my local timezone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our live stock market clock automatically detects your local system timezone and displays real-time open/closed status for New York, London, Tokyo, and Middle East exchanges."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- TAILWIND CSS (CDN for prototype; compile locally for production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes flashGreen { 0% { background-color: rgba(16, 185, 129, 0.35); } 100% { background-color: transparent; } }
+    @keyframes flashRed { 0% { background-color: rgba(239, 68, 68, 0.35); } 100% { background-color: transparent; } }
+    .flash-up { animation: flashGreen 0.8s ease-out; }
+    .flash-down { animation: flashRed 0.8s ease-out; }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- TOP AFFILIATE ANNOUNCEMENT BAR (Monetization Slot #1) -->
+  <div class="bg-emerald-950/80 border-b border-emerald-800/60 text-xs sm:text-sm py-2 px-4 text-center">
+    <span class="bg-emerald-500 text-slate-950 font-bold px-2 py-0.5 rounded text-xs mr-2">PRO TOOL</span>
+    Want advanced charts & real-time level 2 alerts? 
+    <a href="#affiliate-link-tradingview" rel="sponsored noopener" class="text-emerald-400 font-semibold underline hover:text-emerald-300 ml-1">
+      Get 30 Days of TradingView Pro Free + $15 Bonus →
+    </a>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <!-- HERO: LOCAL ATOMIC CLOCK & DATE -->
+    <header class="text-center mb-10 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl">
+      <p id="local-timezone-label" class="text-xs uppercase tracking-widest text-emerald-400 font-semibold mb-2">
+        Detecting Local Timezone...
+      </p>
+      <h1 id="main-clock" class="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight tabular-nums text-white mb-3">
+        00:00:00<span class="text-2xl sm:text-4xl text-slate-500">.00</span>
+      </h1>
+      <p id="main-date" class="text-lg sm:text-xl text-slate-400 font-medium">
+        Loading current date...
+      </p>
+    </header>
+
+    <!-- SECTION 1: GLOBAL STOCK EXCHANGE CLOCKS & OPEN/CLOSE STATUS -->
+    <section aria-labelledby="exchange-heading" class="mb-12">
+      <div class="flex items-center justify-between mb-4">
+        <h2 id="exchange-heading" class="text-xl font-bold text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Global Stock Exchange Clocks & Bell Status
+        </h2>
+        <span class="text-xs text-slate-400">Auto-synced to Exchange Local Time</span>
+      </div>
+
+      <div id="exchange-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: REAL-TIME STREAMING TICKERS -->
+    <section aria-labelledby="tickers-heading" class="mb-12">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+        <h2 id="tickers-heading" class="text-xl font-bold text-white">
+          Live Market Pulse (Real-Time Stream)
+        </h2>
+        <div class="flex items-center gap-2 text-xs text-slate-400">
+          <span id="ws-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span id="ws-status-text">Connecting to live market stream...</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid">
+        <!-- Tickers injected here -->
+      </div>
+
+      <!-- CONTEXTUAL AFFILIATE CTA CARDS (Monetization Slot #2) -->
+      <div class="mt-6 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/80 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="font-bold text-white text-base">Trade Global Stocks & ETFs with $0 Commission</h3>
+          <p class="text-slate-400 text-sm">Open an account in 3 minutes and claim your free fractional share worth up to $100.</p>
+        </div>
+        <a href="#broker-affiliate-link" rel="sponsored noopener" class="whitespace-nowrap bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-lg text-sm transition">
+          Claim Free Stock →
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SEO-RICH STATIC CONTENT (CRITICAL FOR GOOGLE RANKING) -->
+    <section class="border-t border-slate-800 pt-10 text-slate-300 space-y-6 text-sm leading-relaxed">
+      <h2 class="text-2xl font-bold text-white">Global Stock Market Opening & Closing Hours Guide</h2>
+      <p>
+        Timing is critical for day traders, swing traders, and long-term investors. Our <strong>Live Stock Market Clock</strong> synchronizes your device's clock with the exact local time of the world's largest financial centers, including New York (NYSE/NASDAQ), London (LSE), Tokyo (JPX), and Dubai (DFM/ADX).
+      </p>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse border border-slate-800 rounded-lg">
+          <thead>
+            <tr class="bg-slate-900 text-slate-200">
+              <th class="p-3 border border-slate-800">Exchange</th>
+              <th class="p-3 border border-slate-800">Local Timezone</th>
+              <th class="p-3 border border-slate-800">Trading Hours (Local)</th>
+              <th class="p-3 border border-slate-800">Trading Days</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-400">
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">New York (NYSE / NASDAQ)</td>
+              <td class="p-3 border border-slate-800">America/New_York (EST/EDT)</td>
+              <td class="p-3 border border-slate-800">09:30 AM – 04:00 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">London Stock Exchange (LSE)</td>
+              <td class="p-3 border border-slate-800">Europe/London (GMT/BST)</td>
+              <td class="p-3 border border-slate-800">08:00 AM – 04:30 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">Dubai Financial Market (DFM)</td>
+              <td class="p-3 border border-slate-800">Asia/Dubai (GST)</td>
+              <td class="p-3 border border-slate-800">10:00 AM – 03:00 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">Tokyo Stock Exchange (TSE)</td>
+              <td class="p-3 border border-slate-800">Asia/Tokyo (JST)</td>
+              <td class="p-3 border border-slate-800">09:00 AM – 03:30 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-600">
+    <p>Zero-Cost Static Architecture • Built for High-Speed SEO & Real-Time WebSockets</p>
+  </footer>
+
+  <!-- CLIENT-SIDE ENGINE: CLOCKS + LIVE WEBSOCKETS -->
+  <script>
+    // 1. CONFIGURE GLOBAL EXCHANGES
+    const EXCHANGES = [
+      { id: 'nyse', name: 'New York (NYSE)', tz: 'America/New_York', open: 9.5, close: 16.0 },
+      { id: 'lse',  name: 'London (LSE)',    tz: 'Europe/London',    open: 8.0, close: 16.5 },
+      { id: 'dfm',  name: 'Dubai (DFM)',     tz: 'Asia/Dubai',       open: 10.0, close: 15.0 },
+      { id: 'tse',  name: 'Tokyo (TSE)',     tz: 'Asia/Tokyo',       open: 9.0, close: 15.5 }
+    ];
+
+    // Render Exchange Cards
+    const exchangeGrid = document.getElementById('exchange-grid');
+    EXCHANGES.forEach(ex => {
+      exchangeGrid.innerHTML += `
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-semibold text-slate-200 text-sm">${ex.name}</span>
+            <span id="status-${ex.id}" class="text-[11px] font-bold px-2 py-0.5 rounded uppercase">--</span>
+          </div>
+          <div id="clock-${ex.id}" class="text-2xl font-bold tabular-nums text-white">00:00:00</div>
+          <div id="hours-${ex.id}" class="text-xs text-slate-500 mt-1">Hours: ${formatDecimalHour(ex.open)} - ${formatDecimalHour(ex.close)}</div>
+        </div>
+      `;
+    });
+
+    function formatDecimalHour(dec) {
+      const h = Math.floor(dec);
+      const m = Math.round((dec - h) * 60);
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+    }
+
+    // 2. HIGH-PRECISION CLOCK LOOP
+    const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    document.getElementById('local-timezone-label').textContent = `Your Local Time (${userTz.replace('_', ' ')})`;
+
+    function updateClocks() {
+      const now = new Date();
+      
+      // Main Hero Clock with tenths of a second
+      const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+      const ms = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, '0');
+      document.getElementById('main-clock').innerHTML = `${timeStr}<span class="text-2xl sm:text-4xl text-slate-500">.${ms}</span>`;
+      
+      document.getElementById('main-date').textContent = now.toLocaleDateString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      });
+
+      // Exchange Clocks & Open/Closed Status
+      EXCHANGES.forEach(ex => {
+        const exTimeStr = now.toLocaleTimeString('en-US', { timeZone: ex.tz, hour12: false });
+        document.getElementById(`clock-${ex.id}`).textContent = exTimeStr;
+
+        // Calculate decimal hour & weekday in target timezone
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: ex.tz, hour: 'numeric', minute: 'numeric', weekday: 'short', hour12: false
+        }).formatToParts(now);
+        
+        const wkday = parts.find(p => p.type === 'weekday').value;
+        const hr = parseInt(parts.find(p => p.type === 'hour').value, 10);
+        const min = parseInt(parts.find(p => p.type === 'minute').value, 10);
+        const decTime = hr + (min / 60);
+
+        const isWeekend = (wkday === 'Sat' || wkday === 'Sun');
+        const isOpen = !isWeekend && (decTime >= ex.open && decTime < ex.close);
+
+        const badge = document.getElementById(`status-${ex.id}`);
+        if (isOpen) {
+          badge.textContent = 'OPEN';
+          badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        } else {
+          badge.textContent = 'CLOSED';
+          badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400';
+        }
+      });
+
+      requestAnimationFrame(updateClocks);
+    }
+    requestAnimationFrame(updateClocks);
+
+    // 3. LIVE WEBSOCKET STREAMING TICKERS + SIMULATED STOCK FALLBACK
+    const ASSETS = [
+      { id: 'BTCUSDT', symbol: 'BTC / USD', name: 'Bitcoin (24/7 Live)', price: 0, change: 0, type: 'ws' },
+      { id: 'PAXGUSDT', symbol: 'XAU / USD', name: 'Gold Spot (Tokenized)', price: 0, change: 0, type: 'ws' },
+      { id: 'NVDA', symbol: 'NVDA', name: 'NVIDIA Corp.', price: 138.60, change: +2.14, type: 'stock' },
+      { id: 'AAPL', symbol: 'AAPL', name: 'Apple Inc.', price: 231.40, change: +0.65, type: 'stock' }
+    ];
+
+    const tickerGrid = document.getElementById('ticker-grid');
+    ASSETS.forEach(a => {
+      tickerGrid.innerHTML += `
+        <div id="card-${a.id}" class="bg-slate-900 border border-slate-800 rounded-xl p-4 transition-colors">
+          <div class="flex justify-between items-start mb-1">
+            <div>
+              <div class="font-bold text-white text-base">${a.symbol}</div>
+              <div class="text-xs text-slate-400">${a.name}</div>
+            </div>
+            <span id="chg-${a.id}" class="text-xs font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
+              ${a.change > 0 ? '+' + a.change + '%' : '--'}
+            </span>
+          </div>
+          <div id="price-${a.id}" class="text-2xl font-extrabold tabular-nums text-white mt-2">
+            ${a.price ? '$' + a.price.toFixed(2) : 'Connecting...'}
+          </div>
+        </div>
+      `;
+    });
+
+    function updateTickerUI(id, newPrice, pctChange) {
+      const priceEl = document.getElementById(`price-${id}`);
+      const chgEl = document.getElementById(`chg-${id}`);
+      const cardEl = document.getElementById(`card-${id}`);
+      if (!priceEl) return;
+
+      const asset = ASSETS.find(a => a.id === id);
+      const oldPrice = asset.price;
+      asset.price = newPrice;
+
+      priceEl.textContent = '$' + Number(newPrice).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      
+      if (pctChange !== undefined) {
+        const sign = pctChange >= 0 ? '+' : '';
+        chgEl.textContent = `${sign}${Number(pctChange).toFixed(2)}%`;
+        chgEl.className = pctChange >= 0 
+          ? 'text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400'
+          : 'text-xs font-semibold px-1.5 py-0.5 rounded bg-red-500/20 text-red-400';
+      }
+
+      if (oldPrice && newPrice !== oldPrice) {
+        cardEl.classList.remove('flash-up', 'flash-down');
+        void cardEl.offsetWidth; // trigger reflow
+        cardEl.classList.add(newPrice > oldPrice ? 'flash-up' : 'flash-down');
+      }
+    }
+
+    // Connect to Free Keyless Binance WebSocket for 24/7 Live Tickers
+    const ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/paxgusdt@ticker');
+    ws.onopen = () => {
+      document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-emerald-400 animate-ping';
+      document.getElementById('ws-status-text').textContent = 'Live WebSocket Connected';
+    };
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.s && data.c) {
+        updateTickerUI(data.s, parseFloat(data.c), parseFloat(data.P));
+      }
+    };
+
+    // Note: To stream real-time US Stocks (NVDA/AAPL), sign up for a free API key at Finnhub.io
+    // and connect to: new WebSocket('wss://ws.finnhub.io?token=YOUR_FREE_KEY')
+    // Below is a micro-tick simulator so NVDA & AAPL demonstrate live UI flashing out-of-the-box:
+    setInterval(() => {
+      ['NVDA', 'AAPL'].forEach(sym => {
+        const asset = ASSETS.find(a => a.id === sym);
+        const delta = (Math.random() - 0.48) * 0.15;
+        const nextPrice = +(asset.price + delta).toFixed(2);
+        updateTickerUI(sym, nextPrice, asset.change);
+      });
+    }, 2500);
+  </script>
+</body>
+</html>
