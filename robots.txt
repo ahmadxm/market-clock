@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ahmadxm.github.io/market-clock/sitemap.xml
+Sitemap: https://marketclock.live/sitemap.xml
