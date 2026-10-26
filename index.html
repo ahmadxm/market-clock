@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- PRIMARY SEO META TAGS -->
-  <title>Live Stock Market Clock, Bell Countdown & Real-Time Ticker</title>
-  <meta name="description" content="Track exact atomic time, live NYSE, NASDAQ, London, Dubai & Tokyo stock exchange opening/closing bell countdowns, and real-time streaming stock prices.">
-  <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open right now, live stock ticker, trader world clock, market hours timer">
+  <title>Live Stock Market Clock, Bell Countdown & Real-Time Chart Ticker</title>
+  <meta name="description" content="Track exact atomic time, live NYSE, NASDAQ, London, Dubai & Tokyo stock exchange opening/closing bell countdowns, real-time stock tickers, and interactive candlestick charts.">
+  <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open right now, live stock ticker, trader world clock, live stock chart">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yourdomain.com/">
+  <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/">
 
   <!-- OPEN GRAPH / SOCIAL -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Live Stock Market Clock & Opening Bell Countdown">
-  <meta property="og:description" content="Synchronized trader clock with live exchange countdown timers and real-time streaming stock & crypto tickers.">
+  <meta property="og:title" content="Live Stock Market Clock, Bell Countdown & Interactive Charts">
+  <meta property="og:description" content="Synchronized trader clock with live exchange countdown timers, streaming tickers, and real-time TradingView candlestick charts.">
 
   <!-- JSON-LD SCHEMA FOR GOOGLE RICH SNIPPETS -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "Real-time global clock synchronized with major stock exchanges, opening bell countdowns, and live custom watchlists."
+        "description": "Real-time global clock synchronized with major stock exchanges, opening bell countdowns, live custom watchlists, and interactive technical charts."
       },
       {
         "@type": "FAQPage",
@@ -42,10 +42,10 @@
           },
           {
             "@type": "Question",
-            "name": "How does the live stock market countdown work?",
+            "name": "How do I view live candlestick charts for any US stock?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our clock calculates the exact time remaining until the next opening or closing bell across New York, London, Dubai, and Tokyo exchanges, automatically accounting for weekends."
+              "text": "Click any stock ticker card in the watchlist or type any stock symbol into the search bar to load its real-time interactive candlestick chart."
             }
           }
         ]
@@ -127,14 +127,14 @@
     </section>
 
     <!-- SECTION 2: CUSTOM WATCHLIST + REAL-TIME STREAMING TICKERS -->
-    <section aria-labelledby="tickers-heading" class="mb-12">
+    <section aria-labelledby="tickers-heading" class="mb-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-4">
         <div>
           <h2 id="tickers-heading" class="text-xl font-bold text-white">
             Live Market Pulse & Custom Watchlist
           </h2>
           <p class="text-xs text-slate-400 mt-0.5">
-            Click any card to pin its live price to your browser tab. Add any US stock below.
+            Click any card to load its live candlestick chart below & pin its price to your browser tab.
           </p>
         </div>
 
@@ -169,12 +169,36 @@
             <span id="ws-status-text">24/7 Crypto/Gold Stream: Connecting...</span>
           </div>
         </div>
-        <span id="pinned-indicator" class="text-emerald-400 font-semibold">📌 Tab Title Pinned: NVDA</span>
+        <span id="pinned-indicator" class="text-emerald-400 font-semibold">📈 Active Chart & Tab Pin: NVDA</span>
       </div>
 
       <!-- TICKER CARDS GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid">
         <!-- Tickers injected here -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: INTERACTIVE LIVE TRADINGVIEW CANDLESTICK CHART -->
+    <section aria-labelledby="chart-heading" class="mb-12">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div class="flex items-center gap-2.5">
+            <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-extrabold px-2.5 py-1 rounded">
+              LIVE CHART
+            </span>
+            <h2 id="chart-heading" class="text-lg font-bold text-white">
+              NVIDIA Corp. (NVDA) — Real-Time Technical Chart
+            </h2>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-400">
+            <span>Click any ticker card above to switch chart</span>
+          </div>
+        </div>
+
+        <!-- TRADINGVIEW ADVANCED CHART CONTAINER -->
+        <div class="w-full h-[460px] sm:h-[540px] rounded-xl overflow-hidden border border-slate-800 bg-slate-950" id="tv-chart-container">
+          <!-- Injected dynamically via TradingView tv.js -->
+        </div>
       </div>
 
       <!-- CONTEXTUAL AFFILIATE CTA CARDS (Monetization Slot #2) -->
@@ -203,7 +227,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3: SEO-RICH STATIC CONTENT (CRITICAL FOR GOOGLE RANKING) -->
+    <!-- SECTION 4: SEO-RICH STATIC CONTENT (CRITICAL FOR GOOGLE RANKING) -->
     <section class="border-t border-slate-800 pt-10 text-slate-300 space-y-6 text-sm leading-relaxed">
       <h2 class="text-2xl font-bold text-white">Global Stock Market Opening & Closing Hours Guide</h2>
       <p>
@@ -256,7 +280,10 @@
     <p>Live Market Clock & Real-Time Ticker Dashboard • Built for High-Speed SEO</p>
   </footer>
 
-  <!-- CLIENT-SIDE ENGINE: CLOCKS + BELL COUNTDOWNS + FINNHUB + BINANCE -->
+  <!-- TRADINGVIEW WIDGET SCRIPT -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
+  <!-- CLIENT-SIDE ENGINE: CLOCKS + BELL COUNTDOWNS + FINNHUB + BINANCE + LIVE CHART -->
   <script>
     const FINNHUB_API_KEY = 'dbfs1dhr01qiahubgldgdbfs1dhr01qiahubgle0';
     let use12Hour = false;
@@ -302,12 +329,10 @@
       return `${String(hrs).padStart(2, '0')}h ${String(mins).padStart(2, '0')}m ${String(secs).padStart(2, '0')}s`;
     }
 
-    // Toggle 12H / 24H
     document.getElementById('toggle-format-btn').addEventListener('click', () => {
       use12Hour = !use12Hour;
     });
 
-    // Desk Fullscreen Mode
     document.getElementById('fullscreen-btn').addEventListener('click', () => {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(() => {});
@@ -371,12 +396,11 @@
           badge.textContent = 'CLOSED';
           badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400';
           
-          // Calculate seconds until next open (accounting for Friday after-hours & weekends)
           let daysUntilOpen = 0;
-          if (wkday === 5 && currentSecondsOfDay >= closeSeconds) daysUntilOpen = 3; // Fri after close -> Mon
-          else if (wkday === 6) daysUntilOpen = 2; // Sat -> Mon
-          else if (wkday === 0) daysUntilOpen = 1; // Sun -> Mon
-          else if (currentSecondsOfDay >= closeSeconds) daysUntilOpen = 1; // Mon-Thu after close -> Next day
+          if (wkday === 5 && currentSecondsOfDay >= closeSeconds) daysUntilOpen = 3;
+          else if (wkday === 6) daysUntilOpen = 2;
+          else if (wkday === 0) daysUntilOpen = 1;
+          else if (currentSecondsOfDay >= closeSeconds) daysUntilOpen = 1;
 
           const secsUntilOpen = (daysUntilOpen * 86400) - currentSecondsOfDay + openSeconds;
           countdownEl.textContent = `Opens in ${formatSecondsToHMS(secsUntilOpen)}`;
@@ -390,10 +414,10 @@
 
     // 3. WATCHLIST STATE + LOCALSTORAGE PERSISTENCE
     const DEFAULT_ASSETS = [
-      { id: 'NVDA',     symbol: 'NVDA',      name: 'NVIDIA Corp.',       price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
-      { id: 'AAPL',     symbol: 'AAPL',      name: 'Apple Inc.',         price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
-      { id: 'BTCUSDT',  symbol: 'BTC / USD', name: 'Bitcoin (24/7)',     price: 0, prevClose: 0, change: 0, source: 'binance', removable: false },
-      { id: 'PAXGUSDT', symbol: 'XAU / USD', name: 'Gold Spot (24/7)',   price: 0, prevClose: 0, change: 0, source: 'binance', removable: false }
+      { id: 'NVDA',     tvSymbol: 'NASDAQ:NVDA',      symbol: 'NVDA',      name: 'NVIDIA Corp.',       price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
+      { id: 'AAPL',     tvSymbol: 'NASDAQ:AAPL',      symbol: 'AAPL',      name: 'Apple Inc.',         price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
+      { id: 'BTCUSDT',  tvSymbol: 'BINANCE:BTCUSDT',  symbol: 'BTC / USD', name: 'Bitcoin (24/7)',     price: 0, prevClose: 0, change: 0, source: 'binance', removable: false },
+      { id: 'PAXGUSDT', tvSymbol: 'BINANCE:PAXGUSDT', symbol: 'XAU / USD', name: 'Gold Spot (24/7)',   price: 0, prevClose: 0, change: 0, source: 'binance', removable: false }
     ];
 
     let savedCustom = [];
@@ -404,7 +428,7 @@
     let ASSETS = [
       ...DEFAULT_ASSETS,
       ...savedCustom.map(sym => ({
-        id: sym, symbol: sym, name: `${sym} (US Stock)`, price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: true
+        id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Stock)`, price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: true
       }))
     ];
 
@@ -415,7 +439,7 @@
       ASSETS.forEach(a => {
         const isPinned = a.id === pinnedSymbol;
         tickerGrid.innerHTML += `
-          <div id="card-${a.id}" onclick="pinTicker('${a.id}')" class="cursor-pointer bg-slate-900 border ${isPinned ? 'border-emerald-500/70' : 'border-slate-800'} hover:border-slate-600 rounded-xl p-4 transition-all relative group">
+          <div id="card-${a.id}" onclick="selectAsset('${a.id}')" class="cursor-pointer bg-slate-900 border ${isPinned ? 'border-emerald-500 ring-1 ring-emerald-500/40' : 'border-slate-800'} hover:border-slate-600 rounded-xl p-4 transition-all relative group">
             ${a.removable ? `
               <button onclick="removeCustomTicker(event, '${a.id}')" title="Remove ticker" class="absolute top-2.5 right-2.5 text-slate-500 hover:text-red-400 text-xs px-1.5 py-0.5 rounded bg-slate-800/80 opacity-0 group-hover:opacity-100 transition">
                 ✕
@@ -425,7 +449,7 @@
               <div>
                 <div class="font-bold text-white text-base flex items-center gap-1.5">
                   ${a.symbol}
-                  ${isPinned ? '<span class="text-[10px] text-emerald-400">📌</span>' : ''}
+                  ${isPinned ? '<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-bold">CHART</span>' : ''}
                 </div>
                 <div class="text-xs text-slate-400">${a.name}</div>
               </div>
@@ -439,13 +463,41 @@
         if (a.price) updateTickerUI(a.id, a.price, a.change, false);
       });
     }
-    renderTickerCards();
 
-    window.pinTicker = function(id) {
+    // 4. INTERACTIVE TRADINGVIEW CANDLESTICK CHART ENGINE
+    function loadTradingViewChart(asset) {
+      const container = document.getElementById('tv-chart-container');
+      container.innerHTML = '<div id="tv_chart_inner" class="w-full h-full"></div>';
+      document.getElementById('chart-heading').textContent = `${asset.name} (${asset.symbol}) — Real-Time Candlestick Chart`;
+
+      if (typeof TradingView !== 'undefined') {
+        new TradingView.widget({
+          autosize: true,
+          symbol: asset.tvSymbol || asset.id,
+          interval: '15',
+          timezone: userTz || 'Etc/UTC',
+          theme: 'dark',
+          style: '1',
+          locale: 'en',
+          toolbar_bg: '#0f172a',
+          enable_publishing: false,
+          hide_top_toolbar: false,
+          hide_legend: false,
+          save_image: false,
+          container_id: 'tv_chart_inner',
+          backgroundColor: '#020617',
+          gridColor: 'rgba(30, 41, 59, 0.5)',
+          studies: ['Volume@tv-basicstudies']
+        });
+      }
+    }
+
+    window.selectAsset = function(id) {
       pinnedSymbol = id;
       const asset = ASSETS.find(a => a.id === id);
       if (asset) {
-        document.getElementById('pinned-indicator').textContent = `📌 Tab Title Pinned: ${asset.symbol}`;
+        document.getElementById('pinned-indicator').textContent = `📈 Active Chart & Tab Pin: ${asset.symbol}`;
+        loadTradingViewChart(asset);
       }
       renderTickerCards();
       updateDocumentTitle();
@@ -459,9 +511,18 @@
       if (fhSocket && fhSocket.readyState === WebSocket.OPEN) {
         fhSocket.send(JSON.stringify({ type: 'unsubscribe', symbol: sym }));
       }
-      if (pinnedSymbol === sym) pinnedSymbol = 'NVDA';
-      renderTickerCards();
+      if (pinnedSymbol === sym) {
+        selectAsset('NVDA');
+      } else {
+        renderTickerCards();
+      }
     };
+
+    // Initialize initial cards and default NVDA chart
+    renderTickerCards();
+    window.addEventListener('load', () => {
+      loadTradingViewChart(ASSETS[0]);
+    });
 
     function updateDocumentTitle() {
       const pinned = ASSETS.find(a => a.id === pinnedSymbol);
@@ -471,7 +532,7 @@
         const priceFormatted = '$' + Number(pinned.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.title = `${arrow} ${pinned.symbol} ${priceFormatted} | ${nowStr} Market Clock`;
       } else {
-        document.title = `${nowStr} | Live Stock Market Clock & Ticker`;
+        document.title = `${nowStr} | Live Stock Market Clock & Chart`;
       }
     }
     setInterval(updateDocumentTitle, 1000);
@@ -504,7 +565,7 @@
       }
     }
 
-    // 4. ADD CUSTOM STOCK TICKER HANDLER
+    // 5. ADD CUSTOM STOCK TICKER HANDLER
     document.getElementById('add-ticker-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = document.getElementById('ticker-input');
@@ -513,6 +574,7 @@
       if (!sym) return;
 
       if (ASSETS.some(a => a.id === sym)) {
+        selectAsset(sym);
         input.value = '';
         return;
       }
@@ -525,16 +587,16 @@
         const data = await res.json();
         if (data && data.c && data.c > 0) {
           const newAsset = {
-            id: sym, symbol: sym, name: `${sym} (US Stock)`, price: data.c, prevClose: data.pc || data.c, change: data.dp || 0, source: 'finnhub', removable: true
+            id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Stock)`, price: data.c, prevClose: data.pc || data.c, change: data.dp || 0, source: 'finnhub', removable: true
           };
           ASSETS.push(newAsset);
           savedCustom.push(sym);
           localStorage.setItem('customStockTickers', JSON.stringify(savedCustom));
-          renderTickerCards();
 
           if (fhSocket && fhSocket.readyState === WebSocket.OPEN) {
             fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: sym }));
           }
+          selectAsset(sym); // Automatically load its chart!
           input.value = '';
         } else {
           alert(`Ticker "${sym}" not found on US exchanges. Try symbols like TSLA, MSFT, AMD, META, or PLTR.`);
@@ -547,7 +609,7 @@
       }
     });
 
-    // 5. FINNHUB REST SNAPSHOT + REAL-TIME WEBSOCKET
+    // 6. FINNHUB REST SNAPSHOT + REAL-TIME WEBSOCKET
     async function fetchFinnhubSnapshots() {
       const finnhubAssets = ASSETS.filter(a => a.source === 'finnhub');
       for (const asset of finnhubAssets) {
@@ -597,7 +659,7 @@
     }
     connectFinnhubWS();
 
-    // 6. BINANCE 24/7 WEBSOCKET
+    // 7. BINANCE 24/7 WEBSOCKET
     const binanceWS = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/paxgusdt@ticker');
     binanceWS.onopen = () => {
       document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-emerald-400 animate-ping';
