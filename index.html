@@ -1,20 +1,20 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- PRIMARY SEO META TAGS -->
-  <title>Live Stock Market Clock, Bell Countdown & Real-Time Chart Ticker</title>
+  <title>Live Stock Market Clock, Opening Bell Countdowns & Real-Time Charts</title>
   <meta name="description" content="Track exact atomic time, live NYSE, NASDAQ, London, Dubai & Tokyo stock exchange opening/closing bell countdowns, real-time stock tickers, and interactive candlestick charts.">
   <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open right now, live stock ticker, trader world clock, live stock chart">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://marketclock.live/">
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION TAG (Paste your verification code content here after adding your property in GSC) -->
+  <!-- GOOGLE SEARCH CONSOLE VERIFICATION TAG -->
   <meta name="google-site-verification" content="PASTE_YOUR_GSC_VERIFICATION_CODE_HERE" />
 
-  <!-- GOOGLE ADSENSE SCRIPT -->
+  <!-- GOOGLE ADSENSE PUBLISHER SCRIPT -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <!-- OPEN GRAPH / SOCIAL -->
@@ -64,45 +64,45 @@
   <!-- TAILWIND CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes flashGreen { 0% { background-color: rgba(16, 185, 129, 0.35); border-color: rgba(16, 185, 129, 0.8); } 100% { background-color: transparent; } }
-    @keyframes flashRed { 0% { background-color: rgba(239, 68, 68, 0.35); border-color: rgba(239, 68, 68, 0.8); } 100% { background-color: transparent; } }
+    @keyframes flashGreen { 0% { background-color: rgba(16, 185, 129, 0.4); border-color: rgba(16, 185, 129, 0.9); } 100% { background-color: transparent; } }
+    @keyframes flashRed { 0% { background-color: rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.9); } 100% { background-color: transparent; } }
     .flash-up { animation: flashGreen 0.8s ease-out; }
     .flash-down { animation: flashRed 0.8s ease-out; }
     .tabular-nums { font-variant-numeric: tabular-nums; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white min-h-screen flex flex-col">
+<body class="bg-[#090d16] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950 min-h-screen flex flex-col">
 
-  <!-- TOP AFFILIATE ANNOUNCEMENT BAR (Monetization Slot #1) -->
-  <div class="bg-emerald-950/90 border-b border-emerald-800/60 text-xs sm:text-sm py-2.5 px-4 text-center">
-    <span class="bg-emerald-500 text-slate-950 font-extrabold px-2 py-0.5 rounded text-[11px] mr-2 uppercase tracking-wider">Trader Deal</span>
-    Get institutional-grade charts, real-time screeners & second-by-second alerts:
-    <a href="#affiliate-link-tradingview" rel="sponsored noopener" class="text-emerald-400 font-bold underline hover:text-emerald-300 ml-1">
+  <!-- TOP AFFILIATE ANNOUNCEMENT BAR -->
+  <div class="bg-emerald-950/80 border-b border-emerald-800/50 text-xs sm:text-sm py-2 px-4 text-center">
+    <span class="bg-emerald-500 text-slate-950 font-extrabold px-2 py-0.5 rounded text-[10px] mr-2 uppercase tracking-wider">Trader Deal</span>
+    Get institutional-grade charts & second-by-second market alerts:
+    <a href="https://www.tradingview.com/?aff_id=YOUR_ID" target="_blank" rel="sponsored noopener" class="text-emerald-400 font-bold underline hover:text-emerald-300 ml-1">
       Try TradingView Pro 30 Days Free + $15 Bonus →
     </a>
   </div>
 
-  <!-- NAVIGATION / UTILITY BAR -->
-  <nav class="max-w-6xl w-full mx-auto px-4 pt-5 flex items-center justify-between">
+  <!-- NAVIGATION BAR -->
+  <nav class="max-w-7xl w-full mx-auto px-4 pt-5 flex items-center justify-between">
     <div class="flex items-center gap-2.5">
       <div class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_12px_#10b981]"></div>
-      <span class="font-extrabold tracking-tight text-lg text-white">MARKET<span class="text-emerald-400">CLOCK</span></span>
+      <span class="font-black tracking-tight text-lg text-white">MARKET<span class="text-emerald-400">CLOCK</span><span class="text-xs ml-1 bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded font-mono">LIVE</span></span>
     </div>
     <div class="flex items-center gap-3">
-      <button id="toggle-format-btn" class="text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg transition">
+      <button id="toggle-format-btn" class="text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg transition font-medium">
         24H / 12H
       </button>
-      <button id="fullscreen-btn" class="text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+      <button id="fullscreen-btn" class="text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 font-medium">
         <span>⛶</span> Desk Mode
       </button>
     </div>
   </nav>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-6xl w-full mx-auto px-4 py-6 flex-grow">
+  <main class="max-w-7xl w-full mx-auto px-4 py-6 flex-grow">
 
     <!-- HERO: LOCAL ATOMIC CLOCK & DATE -->
-    <header class="text-center mb-10 bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800/90 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+    <header class="text-center mb-8 bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800/80 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-md">
       <div class="flex items-center justify-center gap-2 mb-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
         <p id="local-timezone-label" class="text-xs uppercase tracking-widest text-emerald-400 font-bold">
@@ -110,7 +110,7 @@
         </p>
       </div>
       
-      <h1 id="main-clock" class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight tabular-nums text-white my-2">
+      <h1 id="main-clock" class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight tabular-nums text-white my-2 drop-shadow-md">
         00:00:00<span class="text-2xl sm:text-4xl text-slate-500">.00</span>
       </h1>
       
@@ -119,8 +119,20 @@
       </p>
     </header>
 
+    <!-- ADSENSE SLOT #1 (Fixed Height prevents CLS) -->
+    <div class="my-6 bg-slate-900/30 border border-slate-800/60 rounded-xl p-2 text-center min-h-[100px] flex flex-col items-center justify-center overflow-hidden">
+      <span class="text-[9px] uppercase tracking-widest text-slate-600 mb-1">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:block; width:100%;"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
     <!-- SECTION 1: GLOBAL STOCK EXCHANGE CLOCKS & BELL COUNTDOWNS -->
-    <section aria-labelledby="exchange-heading" class="mb-12">
+    <section aria-labelledby="exchange-heading" class="mb-10">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
         <h2 id="exchange-heading" class="text-xl font-bold text-white flex items-center gap-2">
           Global Stock Exchange Clocks & Bell Countdowns
@@ -129,7 +141,7 @@
       </div>
 
       <div id="exchange-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Populated dynamically by JS -->
+        <!-- Injected via JavaScript -->
       </div>
     </section>
 
@@ -157,7 +169,7 @@
           <button 
             type="submit" 
             id="add-ticker-btn"
-            class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg transition whitespace-nowrap"
+            class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg transition whitespace-nowrap cursor-pointer"
           >
             + Add Ticker
           </button>
@@ -165,7 +177,7 @@
       </div>
 
       <!-- CONNECTION STATUS INDICATORS -->
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 text-xs text-slate-400 bg-slate-900/50 border border-slate-800/60 rounded-lg px-3.5 py-2">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 text-xs text-slate-400 bg-slate-900/40 border border-slate-800/60 rounded-lg px-3.5 py-2">
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-1.5">
             <span id="fh-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
@@ -181,9 +193,21 @@
 
       <!-- TICKER CARDS GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid">
-        <!-- Tickers injected here -->
+        <!-- Injected via JavaScript -->
       </div>
     </section>
+
+    <!-- ADSENSE SLOT #2 -->
+    <div class="my-6 bg-slate-900/30 border border-slate-800/60 rounded-xl p-2 text-center min-h-[100px] flex flex-col items-center justify-center overflow-hidden">
+      <span class="text-[9px] uppercase tracking-widest text-slate-600 mb-1">Sponsored Financial Offer</span>
+      <ins class="adsbygoogle"
+           style="display:block; width:100%;"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- SECTION 3: INTERACTIVE LIVE TRADINGVIEW CANDLESTICK CHART -->
     <section aria-labelledby="chart-heading" class="mb-12">
@@ -203,14 +227,14 @@
         </div>
 
         <!-- TRADINGVIEW ADVANCED CHART CONTAINER -->
-        <div class="w-full h-[460px] sm:h-[540px] rounded-xl overflow-hidden border border-slate-800 bg-slate-950" id="tv-chart-container">
-          <!-- Injected dynamically via TradingView tv.js -->
+        <div class="w-full h-[480px] sm:h-[560px] rounded-xl overflow-hidden border border-slate-800 bg-[#020617]" id="tv-chart-container">
+          <!-- Injected dynamically -->
         </div>
       </div>
 
-      <!-- CONTEXTUAL AFFILIATE CTA CARDS (Monetization Slot #2) -->
+      <!-- CONTEXTUAL AFFILIATE CTA CARDS -->
       <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-gradient-to-r from-slate-900 via-slate-800/90 to-slate-900 border border-slate-700/80 rounded-xl p-5 flex items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-slate-900 via-slate-800/80 to-slate-900 border border-slate-700/80 rounded-xl p-5 flex items-center justify-between gap-4">
           <div>
             <span class="text-[10px] uppercase tracking-wider bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">Equities & ETFs</span>
             <h3 class="font-bold text-white text-base mt-1">Trade Global Stocks with $0 Commission</h3>
@@ -221,7 +245,7 @@
           </a>
         </div>
 
-        <div class="bg-gradient-to-r from-slate-900 via-slate-800/90 to-slate-900 border border-slate-700/80 rounded-xl p-5 flex items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-slate-900 via-slate-800/80 to-slate-900 border border-slate-700/80 rounded-xl p-5 flex items-center justify-between gap-4">
           <div>
             <span class="text-[10px] uppercase tracking-wider bg-amber-500/20 text-amber-400 font-bold px-2 py-0.5 rounded">24/7 Markets</span>
             <h3 class="font-bold text-white text-base mt-1">Trade Bitcoin, Gold & Forex 24/7</h3>
@@ -234,11 +258,11 @@
       </div>
     </section>
 
-    <!-- SECTION 4: SEO-RICH STATIC CONTENT (CRITICAL FOR GOOGLE RANKING) -->
+    <!-- SECTION 4: SEO & ADSENSE APPROVAL CONTENT -->
     <section class="border-t border-slate-800 pt-10 text-slate-300 space-y-6 text-sm leading-relaxed">
       <h2 class="text-2xl font-bold text-white">Global Stock Market Opening & Closing Hours Guide</h2>
       <p>
-        Timing is critical for day traders, swing traders, and long-term investors. Our <strong>Live Stock Market Clock</strong> synchronizes your device's clock with the exact local time of the world's largest financial centers, including New York (NYSE/NASDAQ), London (LSE), Dubai (DFM/ADX), and Tokyo (JPX).
+        Timing is critical for day traders, swing traders, and institutional investors. Our <strong>Live Stock Market Clock</strong> synchronizes your device's system time with the exact local time of the world's largest financial centers, including the New York Stock Exchange (NYSE), NASDAQ, London Stock Exchange (LSE), Dubai Financial Market (DFM), and Tokyo Stock Exchange (TSE).
       </p>
       
       <div class="overflow-x-auto">
@@ -247,7 +271,7 @@
             <tr class="bg-slate-900 text-slate-200">
               <th class="p-3 border border-slate-800">Exchange</th>
               <th class="p-3 border border-slate-800">Local Timezone</th>
-              <th class="p-3 border border-slate-800">Trading Hours (Local)</th>
+              <th class="p-3 border border-slate-800">Regular Trading Hours</th>
               <th class="p-3 border border-slate-800">Trading Days</th>
             </tr>
           </thead>
@@ -279,25 +303,77 @@
           </tbody>
         </table>
       </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+        <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-xl">
+          <h3 class="text-base font-bold text-white mb-2">Why Market Opening & Closing Bells Have High Volatility</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            The first 30 minutes after the opening bell (9:30 AM to 10:00 AM EST for US equities) and the final 30 minutes before the closing bell ("Power Hour" from 3:30 PM to 4:00 PM EST) experience the highest trading volume and liquidity of the session, as overnight institutional orders and daily rebalancing execute simultaneously.
+          </p>
+        </div>
+        <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-xl">
+          <h3 class="text-base font-bold text-white mb-2">Understanding Pre-Market & After-Hours Sessions</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            While standard US equity trading runs from 9:30 AM to 4:00 PM EST, electronic communication networks (ECNs) facilitate pre-market trading starting as early as 4:00 AM EST and after-hours trading until 8:00 PM EST, where quarterly earnings releases frequently drive major price movements.
+          </p>
+        </div>
+      </div>
     </section>
+
+    <!-- ADSENSE SLOT #3 -->
+    <div class="mt-10 bg-slate-900/30 border border-slate-800/60 rounded-xl p-2 text-center min-h-[100px] flex flex-col items-center justify-center overflow-hidden">
+      <span class="text-[9px] uppercase tracking-widest text-slate-600 mb-1">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:block; width:100%;"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="3333333333"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
   </main>
 
-  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-600 mt-12">
-    <p>Live Market Clock & Real-Time Ticker Dashboard • Built for High-Speed SEO</p>
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-500 mt-12 px-4">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <div class="flex items-center justify-center gap-6 font-medium text-slate-400">
+        <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-emerald-400 underline cursor-pointer">Privacy Policy & Cookie Notice</button>
+        <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-emerald-400 underline cursor-pointer">Terms & Financial Disclaimer</button>
+      </div>
+      <p>
+        <strong>Financial Disclaimer:</strong> All stock prices, exchange countdowns, and charts are provided for informational and educational purposes only and do not constitute financial or investment advice.
+      </p>
+      <p class="text-slate-600">© 2026 MarketClock.live. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- PRIVACY POLICY & DISCLAIMER MODAL -->
+  <div id="legal-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 max-w-2xl w-full rounded-2xl p-6 max-h-[80vh] overflow-y-auto text-xs text-slate-300 space-y-4 shadow-2xl">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="text-base font-bold text-white">Privacy Policy, Cookies & Financial Disclaimer</h3>
+        <button onclick="document.getElementById('legal-modal').classList.add('hidden')" class="text-slate-400 hover:text-white text-lg font-bold cursor-pointer">✕</button>
+      </div>
+      <h4 class="font-bold text-white">1. Google AdSense & DoubleClick DART Cookie</h4>
+      <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to this site and/or other sites on the Internet. Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" class="text-emerald-400 underline">Google Ads Settings</a>.</p>
+      <h4 class="font-bold text-white">2. LocalStorage Data</h4>
+      <p>Custom stock ticker symbols added to your watchlist are stored locally in your browser's <code>localStorage</code> and are never transmitted to or stored on our servers.</p>
+      <h4 class="font-bold text-white">3. Financial Market Data Disclaimer</h4>
+      <p>Market data is sourced from public APIs (Finnhub and Binance) and may be delayed. We do not guarantee the accuracy or completeness of any financial data presented and accept no liability for trading decisions made using this tool.</p>
+    </div>
+  </div>
 
   <!-- TRADINGVIEW WIDGET SCRIPT -->
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
-  <!-- CLIENT-SIDE ENGINE: CLOCKS + BELL COUNTDOWNS + FINNHUB + BINANCE + LIVE CHART -->
+  <!-- MASTER CLIENT-SIDE ENGINE -->
   <script>
     const FINNHUB_API_KEY = 'dbfs1dhr01qiahubgldgdbfs1dhr01qiahubgle0';
     let use12Hour = false;
     let pinnedSymbol = 'NVDA';
     let fhSocket = null;
 
-    // 1. CONFIGURE GLOBAL EXCHANGES
     const EXCHANGES = [
       { id: 'nyse', name: 'New York (NYSE)', tz: 'America/New_York', open: 9.5, close: 16.0 },
       { id: 'lse',  name: 'London (LSE)',    tz: 'Europe/London',    open: 8.0, close: 16.5 },
@@ -308,7 +384,7 @@
     const exchangeGrid = document.getElementById('exchange-grid');
     EXCHANGES.forEach(ex => {
       exchangeGrid.innerHTML += `
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col justify-between shadow-lg">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between shadow-lg">
           <div class="flex items-center justify-between mb-2">
             <span class="font-bold text-slate-200 text-sm">${ex.name}</span>
             <span id="status-${ex.id}" class="text-[11px] font-bold px-2 py-0.5 rounded uppercase">--</span>
@@ -348,7 +424,6 @@
       }
     });
 
-    // 2. HIGH-PRECISION CLOCK & COUNTDOWN LOOP
     const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
     document.getElementById('local-timezone-label').textContent = `Your Local Time (${userTz.replace(/_/g, ' ')})`;
 
@@ -419,7 +494,6 @@
     }
     requestAnimationFrame(updateClocks);
 
-    // 3. WATCHLIST STATE + LOCALSTORAGE PERSISTENCE
     const DEFAULT_ASSETS = [
       { id: 'NVDA',     tvSymbol: 'NASDAQ:NVDA',      symbol: 'NVDA',      name: 'NVIDIA Corp.',       price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
       { id: 'AAPL',     tvSymbol: 'NASDAQ:AAPL',      symbol: 'AAPL',      name: 'Apple Inc.',         price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
@@ -446,7 +520,7 @@
       ASSETS.forEach(a => {
         const isPinned = a.id === pinnedSymbol;
         tickerGrid.innerHTML += `
-          <div id="card-${a.id}" onclick="selectAsset('${a.id}')" class="cursor-pointer bg-slate-900 border ${isPinned ? 'border-emerald-500 ring-1 ring-emerald-500/40' : 'border-slate-800'} hover:border-slate-600 rounded-xl p-4 transition-all relative group">
+          <div id="card-${a.id}" onclick="selectAsset('${a.id}')" class="cursor-pointer bg-slate-900/90 border ${isPinned ? 'border-emerald-500 ring-1 ring-emerald-500/40' : 'border-slate-800'} hover:border-slate-600 rounded-xl p-4 transition-all relative group shadow-md">
             ${a.removable ? `
               <button onclick="removeCustomTicker(event, '${a.id}')" title="Remove ticker" class="absolute top-2.5 right-2.5 text-slate-500 hover:text-red-400 text-xs px-1.5 py-0.5 rounded bg-slate-800/80 opacity-0 group-hover:opacity-100 transition">
                 ✕
@@ -471,7 +545,6 @@
       });
     }
 
-    // 4. INTERACTIVE TRADINGVIEW CANDLESTICK CHART ENGINE
     function loadTradingViewChart(asset) {
       const container = document.getElementById('tv-chart-container');
       container.innerHTML = '<div id="tv_chart_inner" class="w-full h-full"></div>';
@@ -525,7 +598,6 @@
       }
     };
 
-    // Initialize initial cards and default NVDA chart
     renderTickerCards();
     window.addEventListener('load', () => {
       loadTradingViewChart(ASSETS[0]);
@@ -572,7 +644,6 @@
       }
     }
 
-    // 5. ADD CUSTOM STOCK TICKER HANDLER
     document.getElementById('add-ticker-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = document.getElementById('ticker-input');
@@ -603,7 +674,7 @@
           if (fhSocket && fhSocket.readyState === WebSocket.OPEN) {
             fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: sym }));
           }
-          selectAsset(sym); // Automatically load its chart!
+          selectAsset(sym);
           input.value = '';
         } else {
           alert(`Ticker "${sym}" not found on US exchanges. Try symbols like TSLA, MSFT, AMD, META, or PLTR.`);
@@ -616,7 +687,6 @@
       }
     });
 
-    // 6. FINNHUB REST SNAPSHOT + REAL-TIME WEBSOCKET
     async function fetchFinnhubSnapshots() {
       const finnhubAssets = ASSETS.filter(a => a.source === 'finnhub');
       for (const asset of finnhubAssets) {
@@ -666,7 +736,6 @@
     }
     connectFinnhubWS();
 
-    // 7. BINANCE 24/7 WEBSOCKET
     const binanceWS = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/paxgusdt@ticker');
     binanceWS.onopen = () => {
       document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-emerald-400 animate-ping';
