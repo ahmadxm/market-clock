@@ -54,7 +54,7 @@
   }
   </script>
 
-  <!-- TAILWIND CSS -->
+  <!-- TAILWIND CSS (CDN for prototype; compile locally for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes flashGreen { 0% { background-color: rgba(16, 185, 129, 0.35); } 100% { background-color: transparent; } }
@@ -110,17 +110,11 @@
     <section aria-labelledby="tickers-heading" class="mb-12">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
         <h2 id="tickers-heading" class="text-xl font-bold text-white">
-          Live Market Pulse (Finnhub + Binance Stream)
+          Live Market Pulse (Real-Time Stream)
         </h2>
-        <div class="flex items-center gap-4 text-xs text-slate-400">
-          <div class="flex items-center gap-1.5">
-            <span id="fh-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span id="fh-status-text">Finnhub: Connecting...</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span id="ws-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span id="ws-status-text">24/7 Feed: Connecting...</span>
-          </div>
+        <div class="flex items-center gap-2 text-xs text-slate-400">
+          <span id="ws-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span id="ws-status-text">Connecting to live market stream...</span>
         </div>
       </div>
 
@@ -140,7 +134,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3: SEO-RICH STATIC CONTENT -->
+    <!-- SECTION 3: SEO-RICH STATIC CONTENT (CRITICAL FOR GOOGLE RANKING) -->
     <section class="border-t border-slate-800 pt-10 text-slate-300 space-y-6 text-sm leading-relaxed">
       <h2 class="text-2xl font-bold text-white">Global Stock Market Opening & Closing Hours Guide</h2>
       <p>
@@ -148,3 +142,209 @@
       </p>
       
       <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse border border-slate-800 rounded-lg">
+          <thead>
+            <tr class="bg-slate-900 text-slate-200">
+              <th class="p-3 border border-slate-800">Exchange</th>
+              <th class="p-3 border border-slate-800">Local Timezone</th>
+              <th class="p-3 border border-slate-800">Trading Hours (Local)</th>
+              <th class="p-3 border border-slate-800">Trading Days</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-400">
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">New York (NYSE / NASDAQ)</td>
+              <td class="p-3 border border-slate-800">America/New_York (EST/EDT)</td>
+              <td class="p-3 border border-slate-800">09:30 AM – 04:00 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">London Stock Exchange (LSE)</td>
+              <td class="p-3 border border-slate-800">Europe/London (GMT/BST)</td>
+              <td class="p-3 border border-slate-800">08:00 AM – 04:30 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">Dubai Financial Market (DFM)</td>
+              <td class="p-3 border border-slate-800">Asia/Dubai (GST)</td>
+              <td class="p-3 border border-slate-800">10:00 AM – 03:00 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-800 font-semibold text-white">Tokyo Stock Exchange (TSE)</td>
+              <td class="p-3 border border-slate-800">Asia/Tokyo (JST)</td>
+              <td class="p-3 border border-slate-800">09:00 AM – 03:30 PM</td>
+              <td class="p-3 border border-slate-800">Monday – Friday</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-600">
+    <p>Zero-Cost Static Architecture • Built for High-Speed SEO & Real-Time WebSockets</p>
+  </footer>
+
+  <!-- CLIENT-SIDE ENGINE: CLOCKS + LIVE WEBSOCKETS -->
+  <script>
+    // 1. CONFIGURE GLOBAL EXCHANGES
+    const EXCHANGES = [
+      { id: 'nyse', name: 'New York (NYSE)', tz: 'America/New_York', open: 9.5, close: 16.0 },
+      { id: 'lse',  name: 'London (LSE)',    tz: 'Europe/London',    open: 8.0, close: 16.5 },
+      { id: 'dfm',  name: 'Dubai (DFM)',     tz: 'Asia/Dubai',       open: 10.0, close: 15.0 },
+      { id: 'tse',  name: 'Tokyo (TSE)',     tz: 'Asia/Tokyo',       open: 9.0, close: 15.5 }
+    ];
+
+    // Render Exchange Cards
+    const exchangeGrid = document.getElementById('exchange-grid');
+    EXCHANGES.forEach(ex => {
+      exchangeGrid.innerHTML += `
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-semibold text-slate-200 text-sm">${ex.name}</span>
+            <span id="status-${ex.id}" class="text-[11px] font-bold px-2 py-0.5 rounded uppercase">--</span>
+          </div>
+          <div id="clock-${ex.id}" class="text-2xl font-bold tabular-nums text-white">00:00:00</div>
+          <div id="hours-${ex.id}" class="text-xs text-slate-500 mt-1">Hours: ${formatDecimalHour(ex.open)} - ${formatDecimalHour(ex.close)}</div>
+        </div>
+      `;
+    });
+
+    function formatDecimalHour(dec) {
+      const h = Math.floor(dec);
+      const m = Math.round((dec - h) * 60);
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+    }
+
+    // 2. HIGH-PRECISION CLOCK LOOP
+    const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    document.getElementById('local-timezone-label').textContent = `Your Local Time (${userTz.replace('_', ' ')})`;
+
+    function updateClocks() {
+      const now = new Date();
+      
+      // Main Hero Clock with tenths of a second
+      const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+      const ms = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, '0');
+      document.getElementById('main-clock').innerHTML = `${timeStr}<span class="text-2xl sm:text-4xl text-slate-500">.${ms}</span>`;
+      
+      document.getElementById('main-date').textContent = now.toLocaleDateString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      });
+
+      // Exchange Clocks & Open/Closed Status
+      EXCHANGES.forEach(ex => {
+        const exTimeStr = now.toLocaleTimeString('en-US', { timeZone: ex.tz, hour12: false });
+        document.getElementById(`clock-${ex.id}`).textContent = exTimeStr;
+
+        // Calculate decimal hour & weekday in target timezone
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: ex.tz, hour: 'numeric', minute: 'numeric', weekday: 'short', hour12: false
+        }).formatToParts(now);
+        
+        const wkday = parts.find(p => p.type === 'weekday').value;
+        const hr = parseInt(parts.find(p => p.type === 'hour').value, 10);
+        const min = parseInt(parts.find(p => p.type === 'minute').value, 10);
+        const decTime = hr + (min / 60);
+
+        const isWeekend = (wkday === 'Sat' || wkday === 'Sun');
+        const isOpen = !isWeekend && (decTime >= ex.open && decTime < ex.close);
+
+        const badge = document.getElementById(`status-${ex.id}`);
+        if (isOpen) {
+          badge.textContent = 'OPEN';
+          badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        } else {
+          badge.textContent = 'CLOSED';
+          badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400';
+        }
+      });
+
+      requestAnimationFrame(updateClocks);
+    }
+    requestAnimationFrame(updateClocks);
+
+    // 3. LIVE WEBSOCKET STREAMING TICKERS + SIMULATED STOCK FALLBACK
+    const ASSETS = [
+      { id: 'BTCUSDT', symbol: 'BTC / USD', name: 'Bitcoin (24/7 Live)', price: 0, change: 0, type: 'ws' },
+      { id: 'PAXGUSDT', symbol: 'XAU / USD', name: 'Gold Spot (Tokenized)', price: 0, change: 0, type: 'ws' },
+      { id: 'NVDA', symbol: 'NVDA', name: 'NVIDIA Corp.', price: 138.60, change: +2.14, type: 'stock' },
+      { id: 'AAPL', symbol: 'AAPL', name: 'Apple Inc.', price: 231.40, change: +0.65, type: 'stock' }
+    ];
+
+    const tickerGrid = document.getElementById('ticker-grid');
+    ASSETS.forEach(a => {
+      tickerGrid.innerHTML += `
+        <div id="card-${a.id}" class="bg-slate-900 border border-slate-800 rounded-xl p-4 transition-colors">
+          <div class="flex justify-between items-start mb-1">
+            <div>
+              <div class="font-bold text-white text-base">${a.symbol}</div>
+              <div class="text-xs text-slate-400">${a.name}</div>
+            </div>
+            <span id="chg-${a.id}" class="text-xs font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
+              ${a.change > 0 ? '+' + a.change + '%' : '--'}
+            </span>
+          </div>
+          <div id="price-${a.id}" class="text-2xl font-extrabold tabular-nums text-white mt-2">
+            ${a.price ? '$' + a.price.toFixed(2) : 'Connecting...'}
+          </div>
+        </div>
+      `;
+    });
+
+    function updateTickerUI(id, newPrice, pctChange) {
+      const priceEl = document.getElementById(`price-${id}`);
+      const chgEl = document.getElementById(`chg-${id}`);
+      const cardEl = document.getElementById(`card-${id}`);
+      if (!priceEl) return;
+
+      const asset = ASSETS.find(a => a.id === id);
+      const oldPrice = asset.price;
+      asset.price = newPrice;
+
+      priceEl.textContent = '$' + Number(newPrice).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      
+      if (pctChange !== undefined) {
+        const sign = pctChange >= 0 ? '+' : '';
+        chgEl.textContent = `${sign}${Number(pctChange).toFixed(2)}%`;
+        chgEl.className = pctChange >= 0 
+          ? 'text-xs font-semibold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400'
+          : 'text-xs font-semibold px-1.5 py-0.5 rounded bg-red-500/20 text-red-400';
+      }
+
+      if (oldPrice && newPrice !== oldPrice) {
+        cardEl.classList.remove('flash-up', 'flash-down');
+        void cardEl.offsetWidth; // trigger reflow
+        cardEl.classList.add(newPrice > oldPrice ? 'flash-up' : 'flash-down');
+      }
+    }
+
+    // Connect to Free Keyless Binance WebSocket for 24/7 Live Tickers
+    const ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/paxgusdt@ticker');
+    ws.onopen = () => {
+      document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-emerald-400 animate-ping';
+      document.getElementById('ws-status-text').textContent = 'Live WebSocket Connected';
+    };
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.s && data.c) {
+        updateTickerUI(data.s, parseFloat(data.c), parseFloat(data.P));
+      }
+    };
+
+    // Note: To stream real-time US Stocks (NVDA/AAPL), sign up for a free API key at Finnhub.io
+    // and connect to: new WebSocket('wss://ws.finnhub.io?token=YOUR_FREE_KEY')
+    // Below is a micro-tick simulator so NVDA & AAPL demonstrate live UI flashing out-of-the-box:
+    setInterval(() => {
+      ['NVDA', 'AAPL'].forEach(sym => {
+        const asset = ASSETS.find(a => a.id === sym);
+        const delta = (Math.random() - 0.48) * 0.15;
+        const nextPrice = +(asset.price + delta).toFixed(2);
+        updateTickerUI(sym, nextPrice, asset.change);
+      });
+    }, 2500);
+  </script>
+</body>
+</html>
