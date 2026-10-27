@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- HYPER-TARGETED DUBAI DFM & ADX SEO META TAGS -->
+  <title>Dubai Financial Market (DFM & ADX) Live Clock, Trading Hours & Countdown</title>
+  <meta name="description" content="Track live Dubai Financial Market (DFM) and Abu Dhabi Securities Exchange (ADX) trading hours, opening and closing bell countdown in UAE time (GST), and global market overlap.">
+  <meta name="keywords" content="DFM trading hours, Dubai stock market clock, is Dubai Financial Market open, ADX market hours, UAE stock market opening time, Emaar stock hours">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marketclock.live/dfm-dubai-market-hours.html">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dubai Financial Market (DFM & ADX) Live Clock & Bell Countdown">
+  <meta property="og:description" content="Live UAE stock market clock synchronized to Gulf Standard Time (Asia/Dubai) with opening and closing bell countdowns.">
+  <meta property="og:url" content="https://marketclock.live/dfm-dubai-market-hours.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- DFM & ADX FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the Dubai Financial Market (DFM) and ADX trading hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both the Dubai Financial Market (DFM) and Abu Dhabi Securities Exchange (ADX) are open Monday through Friday. Pre-opening starts at 9:30 AM GST, continuous trading runs from 10:00 AM to 2:45 PM GST, and the closing auction finishes at 3:00 PM GST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time does the US stock market open in Dubai time (UAE GST)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "During US Daylight Saving Time (EDT), the New York Stock Exchange (NYSE) opens at 5:30 PM Dubai time and closes at 12:00 AM midnight. During US Standard Time (EST), it opens at 6:30 PM Dubai time and closes at 1:00 AM."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #070b19;
+      background-image: 
+        radial-gradient(at 15% 10%, rgba(45, 206, 137, 0.16) 0px, transparent 45%),
+        radial-gradient(at 85% 15%, rgba(17, 205, 239, 0.14) 0px, transparent 45%);
+      background-attachment: fixed;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .argon-glass {
+      background: rgba(15, 23, 42, 0.68);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col">
+
+  <!-- TOP INTERNAL SEO NAVIGATION BAR -->
+  <nav class="sticky top-0 z-40 border-b border-white/10 bg-[#070b19]/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="https://marketclock.live/" class="font-black text-lg text-white flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-ping"></span>
+        MARKET<span class="text-[#11cdef]">CLOCK</span><span class="text-[10px] font-mono bg-[#5e72e4]/20 text-[#11cdef] px-1.5 py-0.5 rounded">.LIVE</span>
+      </a>
+      <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
+        <a href="https://marketclock.live/" class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white border border-white/10">🌍 Global Dashboard</a>
+        <a href="https://marketclock.live/nyse-countdown.html" class="px-3 py-1.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white border border-white/10">🇺🇸 NYSE Countdown</a>
+        <a href="https://marketclock.live/dfm-dubai-market-hours.html" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#2dce89] to-[#11cdef] text-slate-950 font-bold">🇦🇪 Dubai DFM Clock</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl w-full mx-auto px-4 py-8 flex-grow">
+
+    <!-- HERO: DFM & ADX BELL COUNTDOWN -->
+    <header class="argon-glass rounded-3xl p-6 sm:p-10 mb-6 text-center relative overflow-hidden">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2dce89]/15 border border-[#2dce89]/30 mb-3">
+        <span>🇦🇪</span>
+        <span id="dfm-badge" class="text-xs uppercase tracking-widest text-[#2dce89] font-extrabold">Checking UAE Market Status...</span>
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white mb-2">
+        Dubai Financial Market (DFM) & ADX Live Trading Clock
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 mb-6">Synchronized with UAE Gulf Standard Time (Asia/Dubai • UTC+4)</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-slate-950/70 border border-white/10 rounded-2xl p-6">
+          <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-1">Current Dubai / Abu Dhabi Time (GST)</span>
+          <div id="dfm-clock" class="font-mono text-4xl sm:text-6xl font-extrabold text-white tabular-nums">00:00:00</div>
+          <span id="dfm-date" class="text-xs text-slate-400 mt-2 block">--</span>
+        </div>
+        <div class="bg-slate-950/70 border border-[#11cdef]/30 rounded-2xl p-6">
+          <span id="dfm-cd-label" class="text-xs uppercase tracking-wider text-[#11cdef] font-bold block mb-1">Next DFM / ADX Bell</span>
+          <div id="dfm-countdown" class="font-mono text-4xl sm:text-6xl font-extrabold text-[#11cdef] tabular-nums">00h 00m 00s</div>
+          <span class="text-xs text-slate-400 mt-2 block">Monday – Friday • 10:00 AM – 3:00 PM GST</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- A-ADS SLOT #1 (2460095) -->
+    <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[100px] flex flex-col items-center justify-center">
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Financial Partner</span>
+      <div style="width: 100%; margin: auto;">
+        <iframe data-aa='2460095' src='//acceptable.a-ads.com/2460095/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      </div>
+    </div>
+
+    <!-- UAE & GLOBAL MARKET SCHEDULE FOR DUBAI TRADERS -->
+    <article class="argon-glass rounded-3xl p-6 sm:p-8 space-y-6 text-sm text-slate-300 leading-relaxed mb-8">
+      <h2 class="text-2xl font-extrabold text-white">DFM & ADX Trading Sessions + Global Market Hours in UAE Time</h2>
+      <p>
+        Traders based in <strong>Dubai, Abu Dhabi, and the wider GCC</strong> enjoy a unique timezone advantage: the UAE trading day bridges the Asian session close (Tokyo/Hong Kong), the European opening bell (London/Frankfurt), and the afternoon New York (NYSE/NASDAQ) opening bell.
+      </p>
+
+      <div class="overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-900/90 text-white text-xs uppercase">
+              <th class="p-3.5 border-b border-white/10">Global Exchange</th>
+              <th class="p-3.5 border-b border-white/10">Opening Time in Dubai (GST)</th>
+              <th class="p-3.5 border-b border-white/10">Closing Time in Dubai (GST)</th>
+              <th class="p-3.5 border-b border-white/10">Working Days</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-xs sm:text-sm">
+            <tr>
+              <td class="p-3.5 font-bold text-[#2dce89]">🇦🇪 Dubai (DFM) & Abu Dhabi (ADX)</td>
+              <td class="p-3.5 font-mono">10:00 AM GST</td>
+              <td class="p-3.5 font-mono">03:00 PM GST</td>
+              <td class="p-3.5">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 font-bold text-white">🇸🇦 Saudi Exchange (Tadawul)</td>
+              <td class="p-3.5 font-mono">11:00 AM GST</td>
+              <td class="p-3.5 font-mono">04:00 PM GST</td>
+              <td class="p-3.5">Sunday – Thursday</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 font-bold text-white">🇬🇧 London Stock Exchange (LSE)</td>
+              <td class="p-3.5 font-mono">11:00 AM / 12:00 PM GST</td>
+              <td class="p-3.5 font-mono">07:30 PM / 08:30 PM GST</td>
+              <td class="p-3.5">Monday – Friday</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 font-bold text-white">🇺🇸 New York (NYSE & NASDAQ)</td>
+              <td class="p-3.5 font-mono">05:30 PM (EDT) / 06:30 PM (EST)</td>
+              <td class="p-3.5 font-mono">12:00 AM / 01:00 AM GST</td>
+              <td class="p-3.5">Monday – Friday</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- A-ADS SLOT #2 (2460097) -->
+    <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[100px] flex flex-col items-center justify-center">
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Featured Trading Offer</span>
+      <div style="width: 100%; margin: auto;">
+        <iframe data-aa='2460097' src='//acceptable.a-ads.com/2460097/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      </div>
+    </div>
+
+    <!-- LIVE GOLD & GLOBAL CHART -->
+    <section class="argon-glass rounded-3xl p-5 mb-8">
+      <h2 class="text-lg font-extrabold text-white mb-3">Live Gold Spot (XAU / USD) — Synchronized to Dubai Time</h2>
+      <div class="w-full h-[460px] rounded-2xl overflow-hidden border border-white/10" id="tv_dfm_chart"></div>
+    </section>
+
+    <!-- A-ADS SLOT #3 (2460101) -->
+    <div class="argon-glass rounded-2xl p-3 mt-8 text-center min-h-[100px] flex flex-col items-center justify-center">
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Financial Partner</span>
+      <div style="width: 100%; margin: auto;">
+        <iframe data-aa='2460101' src='//acceptable.a-ads.com/2460101/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#050814] py-6 text-center text-xs text-slate-500">
+    <p>© 2026 <a href="https://marketclock.live/" class="text-[#11cdef] underline">MarketClock.live</a> — Live Global Stock Exchange Clock.</p>
+  </footer>
+
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script>
+    const WEEKDAY_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    function fmtHMS(s) {
+      s = Math.max(0, Math.floor(s));
+      const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+      return `${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s`;
+    }
+    function tickDFM() {
+      const now = new Date();
+      document.getElementById('dfm-clock').textContent = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Dubai', hour12: false });
+      document.getElementById('dfm-date').textContent = now.toLocaleDateString('en-US', { timeZone: 'Asia/Dubai', weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+
+      const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Dubai', hour: 'numeric', minute: 'numeric', second: 'numeric', weekday: 'short', hour12: false }).formatToParts(now);
+      const wkday = WEEKDAY_MAP[parts.find(p => p.type === 'weekday').value];
+      const hr = parseInt(parts.find(p => p.type === 'hour').value, 10) % 24;
+      const min = parseInt(parts.find(p => p.type === 'minute').value, 10);
+      const sec = parseInt(parts.find(p => p.type === 'second').value, 10);
+      const curSec = hr * 3600 + min * 60 + sec;
+      const openSec = 10 * 3600, closeSec = 15 * 3600;
+      const isOpen = (wkday >= 1 && wkday <= 5) && (curSec >= openSec && curSec < closeSec);
+
+      const badge = document.getElementById('dfm-badge');
+      const label = document.getElementById('dfm-cd-label');
+      const cd = document.getElementById('dfm-countdown');
+
+      if (isOpen) {
+        badge.textContent = '● DUBAI DFM & ADX ARE OPEN NOW';
+        label.textContent = 'Time Until Closing Bell (3:00 PM GST)';
+        cd.textContent = fmtHMS(closeSec - curSec);
+      } else {
+        badge.textContent = 'DFM & ADX REGULAR SESSION CLOSED';
+        label.textContent = 'Countdown to Next Opening Bell (10:00 AM GST)';
+        let days = 0;
+        if (wkday === 5 && curSec >= closeSec) days = 3;
+        else if (wkday === 6) days = 2;
+        else if (wkday === 0) days = 1;
+        else if (curSec >= closeSec) days = 1;
+        cd.textContent = fmtHMS((days * 86400) - curSec + openSec);
+      }
+      requestAnimationFrame(tickDFM);
+    }
+    requestAnimationFrame(tickDFM);
+
+    window.addEventListener('load', () => {
+      if (typeof TradingView !== 'undefined') {
+        new TradingView.widget({
+          autosize: true, symbol: 'BINANCE:PAXGUSDT', interval: '15', timezone: 'Asia/Dubai',
+          theme: 'dark', style: '1', locale: 'en', container_id: 'tv_dfm_chart', backgroundColor: '#050814'
+        });
+      }
+    });
+  </script>
+</body>
+</html>
