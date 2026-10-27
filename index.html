@@ -14,82 +14,36 @@
   </script>
 
   <!-- PRIMARY SEO META TAGS -->
-  <title>MarketClock.live — Live Stock Market Clock, Bell Countdowns & Real-Time Charts</title>
-  <meta name="description" content="Synchronized atomic stock market clock with live NYSE, NASDAQ, London, Dubai & Tokyo opening bell countdowns, real-time streaming stock & crypto tickers, and interactive candlestick charts.">
-  <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open, live stock ticker, trader world clock, market hours countdown, DFM market hours, LSE clock">
+  <title>MarketClock.live — Live Stock Market Clock & Real-Time Trading Terminal</title>
+  <meta name="description" content="Your calm, real-time companion for global stock markets. Track NYSE, London, Dubai & Tokyo bell countdowns, live streaming tickers, and interactive candlestick charts.">
+  <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open, live stock ticker, trader world clock, market hours countdown">
   <meta name="author" content="MarketClock.live">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://marketclock.live/">
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-  <meta name="google-site-verification" content="PASTE_YOUR_GSC_VERIFICATION_CODE_HERE" />
+  <!-- FAVICON & SOCIAL PREVIEWS -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <meta name="theme-color" content="#070b19">
+  <meta property="og:image" content="https://marketclock.live/og-preview.png">
+  <meta property="og:title" content="MarketClock.live — Your Live Global Trading Companion">
+  <meta property="og:description" content="A beautifully humanized real-time clock and ticker terminal for global investors.">
 
-  <!-- OPEN GRAPH / SOCIAL -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MarketClock.live">
-  <meta property="og:title" content="MarketClock.live — Global Stock Exchange Clock & Live Market Terminal">
-  <meta property="og:description" content="Track exact exchange local times, opening/closing bell countdowns, real-time Finnhub & Binance price streams, and interactive TradingView charts.">
-  <meta property="og:url" content="https://marketclock.live/">
-
-  <!-- TWITTER CARD -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MarketClock.live — Live Stock Market Clock & Real-Time Tickers">
-  <meta name="twitter:description" content="Real-time trader clock with NYSE, LSE, DFM & TSE countdown timers and live streaming prices.">
-
-  <!-- GOOGLE FONTS: INTER & JETBRAINS MONO (ARGON TYPOGRAPHY) -->
+  <!-- GOOGLE FONTS: INTER & JETBRAINS MONO -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- JSON-LD STRUCTURED DATA (WEBAPP + FAQ) -->
+  <!-- JSON-LD SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "MarketClock.live",
-        "url": "https://marketclock.live/",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript and HTML5 WebSockets",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "USD"
-        },
-        "description": "Real-time global stock market clock synchronized with NYSE, NASDAQ, LSE, DFM, and TSE trading sessions, featuring live streaming stock and crypto tickers and interactive technical charts."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What time does the US Stock Market (NYSE & NASDAQ) open and close?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The New York Stock Exchange (NYSE) and NASDAQ regular trading sessions open at 9:30 AM EST/EDT and close at 4:00 PM EST/EDT, Monday through Friday, excluding market holidays."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the trading hours for Dubai Financial Market (DFM) and London Stock Exchange (LSE)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Dubai Financial Market (DFM) trades Monday through Friday from 10:00 AM to 3:00 PM GST (Asia/Dubai). The London Stock Exchange (LSE) trades Monday through Friday from 8:00 AM to 4:30 PM GMT/BST (Europe/London)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I track live candlestick charts and custom US stocks on MarketClock.live?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Click any stock or crypto card in the Live Market Pulse grid to immediately load its real-time TradingView candlestick chart and pin its live price to your browser tab. You can also enter any US stock symbol into the search box to add it to your saved watchlist."
-            }
-          }
-        ]
-      }
-    ]
+    "@type": "WebApplication",
+    "name": "MarketClock.live",
+    "url": "https://marketclock.live/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Human-first real-time global stock market clock and interactive live pricing terminal."
   }
   </script>
 
@@ -119,27 +73,27 @@
       background-attachment: fixed;
     }
     .argon-glass {
-      background: rgba(15, 23, 42, 0.68);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
     .argon-card-hover {
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .argon-card-hover:hover {
-      transform: translateY(-3px);
-      border-color: rgba(17, 205, 239, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(17, 205, 239, 0.12);
+      transform: translateY(-4px);
+      border-color: rgba(17, 205, 239, 0.5);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(17, 205, 239, 0.15);
     }
     @keyframes flashUp {
-      0% { background-color: rgba(45, 206, 137, 0.32); border-color: rgba(45, 206, 137, 0.85); }
-      100% { background-color: rgba(15, 23, 42, 0.68); }
+      0% { background-color: rgba(45, 206, 137, 0.35); border-color: rgba(45, 206, 137, 0.9); }
+      100% { background-color: rgba(15, 23, 42, 0.72); }
     }
     @keyframes flashDown {
-      0% { background-color: rgba(245, 54, 92, 0.32); border-color: rgba(245, 54, 92, 0.85); }
-      100% { background-color: rgba(15, 23, 42, 0.68); }
+      0% { background-color: rgba(245, 54, 92, 0.35); border-color: rgba(245, 54, 92, 0.9); }
+      100% { background-color: rgba(15, 23, 42, 0.72); }
     }
     .flash-up { animation: flashUp 0.85s ease-out; }
     .flash-down { animation: flashDown 0.85s ease-out; }
@@ -148,22 +102,24 @@
 </head>
 <body class="text-slate-100 font-sans antialiased selection:bg-[#11cdef] selection:text-slate-950 min-h-screen flex flex-col">
 
-  <!-- TOP ARGON GRADIENT ANNOUNCEMENT BAR -->
-  <div class="bg-gradient-to-r from-[#5e72e4]/25 via-[#11cdef]/20 to-[#2dce89]/25 border-b border-white/10 text-xs py-2.5 px-4 text-center backdrop-blur-md">
-    <span class="bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white font-extrabold px-2.5 py-0.5 rounded-full text-[10px] mr-2 uppercase tracking-wider shadow">Argon Pro Terminal</span>
-    <span class="text-slate-200">Unlock real-time institutional charts, multi-timeframe screeners & instant alerts:</span>
-    <a href="https://www.tradingview.com/" target="_blank" rel="sponsored noopener" class="text-[#11cdef] font-bold underline hover:text-white ml-1.5 transition">
-      Launch TradingView Pro 30-Day Free Trial →
+  <!-- HUMAN WELCOME TICKER TAPE -->
+  <div class="bg-gradient-to-r from-[#5e72e4]/30 via-[#11cdef]/25 to-[#2dce89]/30 border-b border-white/10 text-xs py-2 px-4 text-center backdrop-blur-md">
+    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-200">
+      <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-ping"></span>
+      <span id="human-greeting">Welcome back trader!</span> — <span id="ticker-mood-text" class="text-[#11cdef]">Syncing global markets...</span>
+    </span>
+    <a href="https://www.tradingview.com/" target="_blank" rel="sponsored noopener" class="text-white font-bold underline hover:text-[#11cdef] ml-2 transition">
+      Pro Charts Free →
     </a>
   </div>
 
-  <!-- STICKY ARGON NAVBAR -->
+  <!-- STICKY NAVBAR -->
   <nav class="sticky top-0 z-40 border-b border-white/5 bg-[#070b19]/80 backdrop-blur-xl">
     <div class="max-w-7xl w-full mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
       <a href="https://marketclock.live/" class="flex items-center gap-3 group">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#5e72e4] via-[#11cdef] to-[#2dce89] p-[1px] shadow-[0_0_20px_rgba(17,205,239,0.3)]">
           <div class="w-full h-full bg-[#070b19] rounded-[11px] flex items-center justify-center">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-ping"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-pulse"></span>
           </div>
         </div>
         <div>
@@ -171,23 +127,23 @@
             MARKET<span class="bg-gradient-to-r from-[#11cdef] to-[#2dce89] bg-clip-text text-transparent">CLOCK</span>
             <span class="text-[10px] font-mono font-bold bg-[#5e72e4]/20 text-[#11cdef] border border-[#11cdef]/30 px-1.5 py-0.5 rounded-md">.LIVE</span>
           </div>
-          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">GLOBAL EXCHANGE BELL & TICKER TERMINAL</p>
+          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">BUILT FOR TRADERS WHO BREATHE</p>
         </div>
       </a>
 
-      <!-- QUICK JUMP LINKS & SEO SILO PAGES -->
+      <!-- NAVIGATION LINKS -->
       <div class="flex items-center gap-2 sm:gap-3">
         <div class="hidden md:flex items-center gap-4 text-xs font-semibold text-slate-400 mr-3">
           <a href="/nyse-countdown.html" class="text-[#11cdef] hover:text-white transition">🇺🇸 NYSE Bell</a>
           <a href="/dfm-dubai-market-hours.html" class="text-[#2dce89] hover:text-white transition">🇦🇪 Dubai DFM</a>
           <a href="#watchlist-section" class="hover:text-white transition">Live Pulse</a>
-          <a href="#chart-section" class="hover:text-white transition">Candlestick Chart</a>
+          <a href="#chart-section" class="hover:text-white transition">Charts</a>
         </div>
-        <button id="toggle-format-btn" class="text-xs argon-glass hover:border-[#11cdef]/50 text-slate-200 px-3 py-1.5 rounded-xl transition font-semibold cursor-pointer">
+        <button id="toggle-format-btn" class="text-xs argon-glass hover:border-[#11cdef]/50 text-slate-200 px-3.5 py-2 rounded-xl transition font-semibold cursor-pointer">
           24H / 12H
         </button>
-        <button id="fullscreen-btn" class="text-xs bg-gradient-to-r from-[#5e72e4] to-[#11cdef] hover:opacity-95 text-white px-3.5 py-1.5 rounded-xl transition flex items-center gap-1.5 font-bold shadow-lg shadow-[#5e72e4]/20 cursor-pointer">
-          <span>⛶</span> Desk Mode
+        <button id="fullscreen-btn" class="text-xs bg-gradient-to-r from-[#5e72e4] to-[#11cdef] hover:opacity-95 text-white px-4 py-2 rounded-xl transition flex items-center gap-1.5 font-bold shadow-lg shadow-[#5e72e4]/20 cursor-pointer">
+          <span>⛶</span> Focus Desk Mode
         </button>
       </div>
     </div>
@@ -196,98 +152,94 @@
   <!-- MAIN TERMINAL CONTAINER -->
   <main class="max-w-7xl w-full mx-auto px-4 py-6 flex-grow">
 
-    <!-- HERO: ARGON ATOMIC MASTER CLOCK -->
+    <!-- HERO: HUMANIZED ATOMIC MASTER CLOCK -->
     <header class="argon-glass rounded-3xl p-6 sm:p-10 mb-6 relative overflow-hidden">
       <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#5e72e4]/20 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-[#11cdef]/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
         <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2dce89]/10 border border-[#2dce89]/30 mb-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2dce89]/10 border border-[#2dce89]/30 mb-3 shadow-inner">
             <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-pulse"></span>
             <span id="local-timezone-label" class="text-[11px] uppercase tracking-widest text-[#2dce89] font-bold">
-              Detecting Local Timezone...
+              Local Timezone Active
             </span>
           </div>
           <h1 id="main-clock" class="font-mono text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight tabular-nums text-white leading-none">
             00:00:00<span class="text-2xl sm:text-4xl text-slate-500">.00</span>
           </h1>
           <p id="main-date" class="text-base sm:text-lg text-slate-300 font-medium mt-3">
-            Synchronizing atomic calendar...
+            Loading calendar...
           </p>
         </div>
 
-        <!-- UTC & SESSION SUMMARY PILL BOX -->
+        <!-- REASSURING SUMMARY PILLS -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto">
           <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Universal Time (UTC)</span>
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">UTC Reference</span>
             <span id="utc-clock" class="font-mono text-xl sm:text-2xl font-bold text-[#11cdef] tabular-nums mt-1 block">00:00:00</span>
-            <span class="text-[10px] text-slate-500">Global Financial Reference</span>
+            <span class="text-[10px] text-slate-500">Global Standard</span>
           </div>
           <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Active Markets</span>
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Active Exchanges</span>
             <span id="open-markets-count" class="font-mono text-xl sm:text-2xl font-bold text-[#2dce89] mt-1 block">0 / 4</span>
-            <span class="text-[10px] text-slate-500">Major Hubs Open Now</span>
+            <span class="text-[10px] text-slate-500">Hubs Open Now</span>
           </div>
           <div class="col-span-2 sm:col-span-1 bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Pinned Tab Ticker</span>
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Pinned Tab</span>
             <span id="hero-pinned-ticker" class="font-mono text-xl sm:text-2xl font-bold text-white mt-1 block">NVDA</span>
-            <span class="text-[10px] text-[#11cdef]">Live in Browser Title</span>
+            <span class="text-[10px] text-[#11cdef]">Live in Title</span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- =================================================================== -->
-    <!-- 💰 A-ADS SPONSOR UNIT #1 (ID: 2460095)                              -->
-    <!-- =================================================================== -->
+    <!-- SPONSOR UNIT #1 -->
     <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
-      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Financial Partner</span>
-      <div id="aads-frame-1" style="width: 100%; margin: auto; position: relative; z-index: 10;">
-        <iframe data-aa='2460095' src='//acceptable.a-ads.com/2460095/?size=Adaptive'
-                style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Partner</span>
+      <div style="width: 100%; margin: auto; position: relative; z-index: 10;">
+        <iframe data-aa='2460095' src='//acceptable.a-ads.com/2460095/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
       </div>
     </div>
 
-    <!-- SECTION 1: GLOBAL STOCK EXCHANGE CLOCKS & BELL COUNTDOWNS -->
-    <section id="exchange-section" aria-labelledby="exchange-heading" class="mb-10">
+    <!-- SECTION 1: GLOBAL EXCHANGES -->
+    <section id="exchange-section" class="mb-10">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
         <div>
-          <h2 id="exchange-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+          <h2 class="text-xl font-extrabold text-white flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#11cdef]"></span>
             Global Stock Exchange Clocks & Bell Countdowns
           </h2>
-          <p class="text-xs text-slate-400">Real-time session status, local exchange time, and exact countdown to the next bell.</p>
+          <p class="text-xs text-slate-400">Never miss an open or close. Real-time countdowns tailored to your browser session.</p>
         </div>
         <span class="text-xs font-mono text-slate-400 bg-slate-900/80 border border-white/10 px-3 py-1 rounded-lg">
-          Auto-Synced to Exchange DST
+          Live DST Sync
         </span>
       </div>
 
       <div id="exchange-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Populated dynamically by JS -->
+        <!-- JS Injected -->
       </div>
     </section>
 
-    <!-- SECTION 2: LIVE MARKET PULSE & CUSTOM WATCHLIST -->
-    <section id="watchlist-section" aria-labelledby="tickers-heading" class="mb-8">
+    <!-- SECTION 2: LIVE MARKET PULSE & WATCHLIST -->
+    <section id="watchlist-section" class="mb-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-4">
         <div>
-          <h2 id="tickers-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+          <h2 class="text-xl font-extrabold text-white flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89]"></span>
             Live Market Pulse & Custom Watchlist
           </h2>
           <p class="text-xs text-slate-400 mt-0.5">
-            Click any asset card to load its interactive candlestick chart below and pin its live price to your browser tab.
+            Click any card to instantly load its live candlestick chart and pin its price to your browser tab.
           </p>
         </div>
 
-        <!-- ADD CUSTOM STOCK FORM -->
         <form id="add-ticker-form" class="flex items-center gap-2">
           <input 
             id="ticker-input" 
             type="text" 
-            placeholder="Add US Ticker (e.g. AMD, META, PLTR)" 
+            placeholder="Add Stock (e.g. AMD, META, TSLA)" 
             maxlength="10"
             class="argon-glass focus:border-[#11cdef] focus:outline-none text-white text-xs sm:text-sm rounded-xl px-4 py-2.5 uppercase w-52 sm:w-64 font-mono placeholder:font-sans placeholder:text-slate-500"
           >
@@ -301,50 +253,46 @@
         </form>
       </div>
 
-      <!-- STREAM CONNECTION TELEMETRY BAR -->
+      <!-- TELEMETRY BAR -->
       <div class="argon-glass rounded-xl px-4 py-2.5 mb-4 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
         <div class="flex flex-wrap items-center gap-5">
           <div class="flex items-center gap-2">
             <span id="fh-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span id="fh-status-text" class="font-medium">Finnhub Equities Stream: Connecting...</span>
+            <span id="fh-status-text" class="font-medium">Finnhub Stream: Connecting...</span>
           </div>
           <div class="flex items-center gap-2">
             <span id="ws-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span id="ws-status-text" class="font-medium">Binance 24/7 Crypto & Gold Stream: Connecting...</span>
+            <span id="ws-status-text" class="font-medium">24/7 Crypto Stream: Connecting...</span>
           </div>
         </div>
         <span id="pinned-indicator" class="text-[#11cdef] font-mono font-bold text-xs">
-          📌 Active Chart & Tab: NVDA
+          📌 Active Chart: NVDA
         </span>
       </div>
 
-      <!-- TICKER CARDS GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid">
-        <!-- Injected via JS -->
+        <!-- JS Injected -->
       </div>
     </section>
 
-    <!-- =================================================================== -->
-    <!-- 💰 A-ADS SPONSOR UNIT #2 (ID: 2460097)                              -->
-    <!-- =================================================================== -->
+    <!-- SPONSOR UNIT #2 -->
     <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
-      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Featured Trading Offer</span>
-      <div id="aads-frame-2" style="width: 100%; margin: auto; position: relative; z-index: 10;">
-        <iframe data-aa='2460097' src='//acceptable.a-ads.com/2460097/?size=Adaptive'
-                style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Featured Offer</span>
+      <div style="width: 100%; margin: auto; position: relative; z-index: 10;">
+        <iframe data-aa='2460097' src='//acceptable.a-ads.com/2460097/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
       </div>
     </div>
 
-    <!-- SECTION 3: INTERACTIVE LIVE TRADINGVIEW CANDLESTICK CHART -->
-    <section id="chart-section" aria-labelledby="chart-heading" class="mb-12">
+    <!-- SECTION 3: TRADINGVIEW CHART -->
+    <section id="chart-section" class="mb-12">
       <div class="argon-glass rounded-3xl p-4 sm:p-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div class="flex items-center gap-3">
             <span class="bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white text-[11px] font-extrabold px-3 py-1 rounded-lg shadow">
-              ARGON CHART ENGINE
+              INTERACTIVE CHART
             </span>
             <h2 id="chart-heading" class="text-base sm:text-lg font-extrabold text-white">
-              NVIDIA Corp. (NVDA) — Real-Time Technical Chart
+              NVIDIA Corp. (NVDA) — Real-Time Candlestick Chart
             </h2>
           </div>
           <div class="flex items-center gap-2">
@@ -356,19 +304,16 @@
           </div>
         </div>
 
-        <!-- TRADINGVIEW CONTAINER -->
-        <div class="w-full h-[480px] sm:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-[#050814]" id="tv-chart-container">
-          <!-- Injected dynamically -->
-        </div>
+        <div class="w-full h-[480px] sm:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-[#050814]" id="tv-chart-container"></div>
       </div>
 
-      <!-- HIGH-CONVERTING AFFILIATE CARDS -->
+      <!-- AFFILIATE CARDS -->
       <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="argon-glass argon-card-hover rounded-2xl p-5 flex items-center justify-between gap-4 border-l-4 border-l-[#2dce89]">
           <div>
-            <span class="text-[10px] uppercase tracking-wider bg-[#2dce89]/20 text-[#2dce89] font-extrabold px-2.5 py-0.5 rounded-full">Global Equities & ETFs</span>
-            <h3 class="font-extrabold text-white text-base mt-1.5">Trade US & Global Stocks with $0 Commission</h3>
-            <p class="text-slate-400 text-xs mt-0.5">Instant execution, fractional shares, and real-time market depth.</p>
+            <span class="text-[10px] uppercase tracking-wider bg-[#2dce89]/20 text-[#2dce89] font-extrabold px-2.5 py-0.5 rounded-full">Global Equities</span>
+            <h3 class="font-extrabold text-white text-base mt-1.5">Trade US Stocks with $0 Commission</h3>
+            <p class="text-slate-400 text-xs mt-0.5">Instant execution and fractional shares.</p>
           </div>
           <a href="https://www.tradingview.com/" target="_blank" rel="sponsored noopener" class="whitespace-nowrap bg-[#2dce89] hover:opacity-95 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-[#2dce89]/20">
             Start Trading →
@@ -377,9 +322,9 @@
 
         <div class="argon-glass argon-card-hover rounded-2xl p-5 flex items-center justify-between gap-4 border-l-4 border-l-[#11cdef]">
           <div>
-            <span class="text-[10px] uppercase tracking-wider bg-[#11cdef]/20 text-[#11cdef] font-extrabold px-2.5 py-0.5 rounded-full">24/7 Spot & Futures</span>
-            <h3 class="font-extrabold text-white text-base mt-1.5">Trade Bitcoin, Gold & Global Forex 24/7</h3>
-            <p class="text-slate-400 text-xs mt-0.5">Stock markets closed? Trade live 24/7 liquidity with deep order books.</p>
+            <span class="text-[10px] uppercase tracking-wider bg-[#11cdef]/20 text-[#11cdef] font-extrabold px-2.5 py-0.5 rounded-full">24/7 Crypto & Gold</span>
+            <h3 class="font-extrabold text-white text-base mt-1.5">Trade Bitcoin & Gold 24/7</h3>
+            <p class="text-slate-400 text-xs mt-0.5">Markets closed? Trade anytime.</p>
           </div>
           <a href="https://www.binance.com/" target="_blank" rel="sponsored noopener" class="whitespace-nowrap bg-[#11cdef] hover:opacity-95 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-[#11cdef]/20">
             Trade 24/7 →
@@ -388,7 +333,7 @@
       </div>
     </section>
 
-    <!-- SECTION 4: COMPREHENSIVE SEO GUIDE -->
+    <!-- SECTION 4: SEO MANUAL -->
     <section id="guide-section" class="argon-glass rounded-3xl p-6 sm:p-8 text-slate-300 space-y-6 text-sm leading-relaxed">
       <div class="border-b border-white/10 pb-4">
         <span class="text-xs font-mono uppercase tracking-widest text-[#11cdef] font-bold">Trader Reference Manual</span>
@@ -444,14 +389,11 @@
       </div>
     </section>
 
-    <!-- =================================================================== -->
-    <!-- 💰 A-ADS SPONSOR UNIT #3 (ID: 2460101)                              -->
-    <!-- =================================================================== -->
+    <!-- SPONSOR UNIT #3 -->
     <div class="argon-glass rounded-2xl p-3 mt-8 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
-      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Financial Partner</span>
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Partner</span>
       <div id="aads-frame-3" style="width: 100%; margin: auto; position: relative; z-index: 10;">
-        <iframe data-aa='2460101' src='//acceptable.a-ads.com/2460101/?size=Adaptive'
-                style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+        <iframe data-aa='2460101' src='//acceptable.a-ads.com/2460101/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
       </div>
     </div>
 
@@ -463,44 +405,45 @@
       <div class="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-400">
         <a href="/nyse-countdown.html" class="hover:text-[#11cdef] underline">NYSE Bell Countdown</a>
         <a href="/dfm-dubai-market-hours.html" class="hover:text-[#2dce89] underline">Dubai DFM Market Hours</a>
-        <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-[#11cdef] underline cursor-pointer">Privacy Policy & Cookie Notice</button>
-        <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-[#11cdef] underline cursor-pointer">Terms & Financial Disclaimer</button>
-        <a href="https://marketclock.live/sitemap.xml" class="hover:text-[#11cdef] underline">XML Sitemap</a>
+        <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-[#11cdef] underline cursor-pointer">Privacy & Terms</button>
+        <a href="https://marketclock.live/sitemap.xml" class="hover:text-[#11cdef] underline">Sitemap</a>
       </div>
       <p class="max-w-3xl mx-auto leading-relaxed">
-        <strong>Financial Disclaimer:</strong> MarketClock.live provides real-time exchange clocks, market countdowns, and streaming financial data for informational and educational purposes only. Nothing on this website constitutes investment, tax, or trading advice.
+        <strong>Financial Disclaimer:</strong> MarketClock.live is built for educational and informational purposes. Not financial advice.
       </p>
-      <p class="text-slate-600">© 2026 MarketClock.live — Argon Financial Terminal Architecture. All rights reserved.</p>
+      <p class="text-slate-600">© 2026 MarketClock.live — Designed with care for traders worldwide.</p>
     </div>
   </footer>
 
-  <!-- PRIVACY POLICY & DISCLAIMER MODAL -->
+  <!-- MODAL -->
   <div id="legal-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="argon-glass max-w-2xl w-full rounded-3xl p-6 max-h-[82vh] overflow-y-auto text-xs text-slate-300 space-y-4">
       <div class="flex justify-between items-center border-b border-white/10 pb-3">
-        <h3 class="text-base font-extrabold text-white">Privacy Policy, Analytics & Financial Disclaimer</h3>
+        <h3 class="text-base font-extrabold text-white">Privacy Policy & Disclaimer</h3>
         <button onclick="document.getElementById('legal-modal').classList.add('hidden')" class="text-slate-400 hover:text-white text-lg font-bold cursor-pointer">✕</button>
       </div>
-      <h4 class="font-bold text-white">1. Google Analytics & LocalStorage</h4>
-      <p>MarketClock.live uses Google Analytics 4 (GA4) to measure anonymous visitor traffic and page engagement. Custom stock symbols added to your watchlist are stored strictly inside your browser's local storage (<code>localStorage</code>).</p>
-      <h4 class="font-bold text-white">2. Advertising & Third-Party Partners</h4>
-      <p>We display non-intrusive advertisements powered by A-Ads and contextual affiliate links. Third-party ad providers and embedded widgets (such as TradingView charts) may use standard cookies to function properly.</p>
-      <h4 class="font-bold text-white">3. Market Data & No-Liability Disclaimer</h4>
-      <p>Live equity and cryptocurrency quotes are streamed from Finnhub and Binance public APIs and may be subject to network latency. We do not guarantee data accuracy and accept zero liability for any financial loss resulting from the use of this dashboard.</p>
+      <p>MarketClock.live respects your privacy. Watchlists are stored locally in your browser. Live data is streamed securely via public financial APIs.</p>
     </div>
   </div>
 
-  <!-- TRADINGVIEW WIDGET LIBRARY -->
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
-  <!-- ARGON MASTER REAL-TIME ENGINE -->
+  <!-- HUMANIZED MASTER SCRIPT -->
   <script>
     const FINNHUB_API_KEY = 'dbfs1dhr01qiahubgldgdbfs1dhr01qiahubgle0';
     let use12Hour = false;
     let pinnedSymbol = 'NVDA';
     let fhSocket = null;
 
-    // 1. GLOBAL EXCHANGES CONFIGURATION
+    // Human Greeting Logic
+    const hrLocal = new Date().getHours();
+    let greet = "Welcome back trader";
+    if (hrLocal >= 4 && hrLocal < 12) greet = "Good morning, happy trading";
+    else if (hrLocal >= 12 && hrLocal < 17) greet = "Good afternoon session";
+    else if (hrLocal >= 17 && hrLocal < 22) greet = "Evening session active";
+    else greet = "Late night global terminal";
+    document.getElementById('human-greeting').textContent = greet;
+
     const EXCHANGES = [
       { id: 'nyse', name: 'New York (NYSE)', flag: '🇺🇸', tz: 'America/New_York', open: 9.5,  close: 16.0 },
       { id: 'lse',  name: 'London (LSE)',    flag: '🇬🇧', tz: 'Europe/London',    open: 8.0,  close: 16.5 },
@@ -560,7 +503,6 @@
       }
     });
 
-    // 2. ATOMIC CLOCK & BELL COUNTDOWN ENGINE
     const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
     document.getElementById('local-timezone-label').textContent = `Local Time • ${userTz.replace(/_/g, ' ')}`;
 
@@ -586,6 +528,7 @@
       });
 
       let openCount = 0;
+      let activeExchangesList = [];
 
       EXCHANGES.forEach(ex => {
         const exTimeStr = now.toLocaleTimeString('en-US', { timeZone: ex.tz, hour12: use12Hour });
@@ -615,6 +558,7 @@
 
         if (isOpen) {
           openCount++;
+          activeExchangesList.push(ex.name);
           badge.textContent = '● OPEN';
           badge.className = 'text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#2dce89]/20 text-[#2dce89] border border-[#2dce89]/40';
           const secsLeft = closeSeconds - currentSecondsOfDay;
@@ -640,11 +584,16 @@
       });
 
       document.getElementById('open-markets-count').textContent = `${openCount} / ${EXCHANGES.length}`;
+      if (openCount > 0) {
+        document.getElementById('ticker-mood-text').textContent = `Active trading sessions right now: ${activeExchangesList.join(', ')}`;
+      } else {
+        document.getElementById('ticker-mood-text').textContent = `Weekend / After-hours mode • Crypto & Gold 24/7 active`;
+      }
+
       requestAnimationFrame(updateClocks);
     }
     requestAnimationFrame(updateClocks);
 
-    // 3. WATCHLIST STATE (8 DEFAULT ASSETS + CUSTOM USER STOCKS)
     const DEFAULT_ASSETS = [
       { id: 'NVDA',     tvSymbol: 'NASDAQ:NVDA',      symbol: 'NVDA',      name: 'NVIDIA Corp.',       price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
       { id: 'AAPL',     tvSymbol: 'NASDAQ:AAPL',      symbol: 'AAPL',      name: 'Apple Inc.',         price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
@@ -702,7 +651,6 @@
       });
     }
 
-    // 4. TRADINGVIEW CANDLESTICK CHART LOADER
     function loadTradingViewChart(asset) {
       const container = document.getElementById('tv-chart-container');
       container.innerHTML = '<div id="tv_chart_inner" class="w-full h-full"></div>';
@@ -734,7 +682,7 @@
       pinnedSymbol = id;
       const asset = ASSETS.find(a => a.id === id);
       if (asset) {
-        document.getElementById('pinned-indicator').textContent = `📌 Active Chart & Tab: ${asset.symbol}`;
+        document.getElementById('pinned-indicator').textContent = `📌 Active Chart: ${asset.symbol}`;
         document.getElementById('hero-pinned-ticker').textContent = asset.symbol;
         loadTradingViewChart(asset);
         if (typeof gtag === 'function') {
@@ -806,7 +754,6 @@
       }
     }
 
-    // 5. ADD CUSTOM TICKER FORM
     document.getElementById('add-ticker-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = document.getElementById('ticker-input');
@@ -853,7 +800,6 @@
       }
     });
 
-    // Track Affiliate CTA clicks in GA4
     document.addEventListener('click', (e) => {
       const aff = e.target.closest('a[rel*="sponsored"]');
       if (aff && typeof gtag === 'function') {
@@ -861,7 +807,6 @@
       }
     });
 
-    // 6. FINNHUB SNAPSHOT + AUTO-RECONNECTING WEBSOCKET
     async function fetchFinnhubSnapshots() {
       const finnhubAssets = ASSETS.filter(a => a.source === 'finnhub');
       for (const asset of finnhubAssets) {
@@ -883,7 +828,7 @@
 
       fhSocket.onopen = () => {
         document.getElementById('fh-status-dot').className = 'w-2 h-2 rounded-full bg-[#2dce89] animate-ping';
-        document.getElementById('fh-status-text').textContent = 'Finnhub Equities Stream: Connected';
+        document.getElementById('fh-status-text').textContent = 'Finnhub Stream: Live';
         ASSETS.filter(a => a.source === 'finnhub').forEach(a => {
           fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: a.id }));
         });
@@ -912,12 +857,11 @@
     }
     connectFinnhubWS();
 
-    // 7. BINANCE 24/7 MULTI-ASSET STREAM WITH AUTO-RECONNECT
     function connectBinanceWS() {
       const binanceWS = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/ethusdt@ticker/paxgusdt@ticker/solusdt@ticker');
       binanceWS.onopen = () => {
         document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-[#2dce89] animate-ping';
-        document.getElementById('ws-status-text').textContent = 'Binance 24/7 Crypto & Gold Stream: Live';
+        document.getElementById('ws-status-text').textContent = 'Crypto Stream: Live';
       };
       binanceWS.onmessage = (event) => {
         const data = JSON.parse(event.data);
@@ -927,7 +871,7 @@
       };
       binanceWS.onclose = () => {
         document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-amber-400';
-        document.getElementById('ws-status-text').textContent = '24/7 Stream: Reconnecting...';
+        document.getElementById('ws-status-text').textContent = 'Crypto: Reconnecting...';
         setTimeout(connectBinanceWS, 5000);
       };
     }
