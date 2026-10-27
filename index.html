@@ -14,9 +14,9 @@
   </script>
 
   <!-- PRIMARY SEO META TAGS -->
-  <title>MarketClock.live — Live Stock Market Clock & Real-Time Trading Terminal</title>
-  <meta name="description" content="Your calm, real-time companion for global stock markets. Track NYSE, London, Dubai & Tokyo bell countdowns, live streaming tickers, and interactive candlestick charts.">
-  <meta name="keywords" content="stock market clock, NYSE opening bell countdown, is the stock market open, live stock ticker, trader world clock, market hours countdown">
+  <title>MarketClock.live — Trader Session Clock, Bell Alarms, Risk Calculator & Live Charts</title>
+  <meta name="description" content="Free all-in-one day trader workstation: Live NYSE, London, Dubai & Tokyo bell countdowns with audio alarms, 24h session overlap map, position size calculator, live news, and charts.">
+  <meta name="keywords" content="stock market clock with alarm, trading session overlap clock, NYSE opening bell sound countdown, position size calculator stocks, ICT killzone clock, live market terminal">
   <meta name="author" content="MarketClock.live">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://marketclock.live/">
@@ -26,10 +26,10 @@
   <link rel="apple-touch-icon" href="/favicon.svg">
   <meta name="theme-color" content="#070b19">
   <meta property="og:image" content="https://marketclock.live/og-preview.png">
-  <meta property="og:title" content="MarketClock.live — Your Live Global Trading Companion">
-  <meta property="og:description" content="A beautifully humanized real-time clock and ticker terminal for global investors.">
+  <meta property="og:title" content="MarketClock.live — Free Trader Workstation: Bell Alarms, Session Map & Risk Calculator">
+  <meta property="og:description" content="Never miss an opening bell or miscalculate a stop-loss again. Live session overlap map, audible bell alarms, position sizer, and breaking market news.">
 
-  <!-- GOOGLE FONTS: INTER & JETBRAINS MONO -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -39,11 +39,18 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "MarketClock.live",
+    "name": "MarketClock.live Trader Workstation",
     "url": "https://marketclock.live/",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
-    "description": "Human-first real-time global stock market clock and interactive live pricing terminal."
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Audible Opening and Closing Bell Alarms",
+      "24-Hour Global Trading Session Overlap Visualizer",
+      "Real-Time Position Size and Stop-Loss Risk Calculator",
+      "Live Streaming Stock and Crypto Watchlist with TradingView Charts",
+      "Real-Time Breaking Financial News Feed"
+    ]
   }
   </script>
 
@@ -80,12 +87,12 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
     .argon-card-hover {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .argon-card-hover:hover {
-      transform: translateY(-4px);
-      border-color: rgba(17, 205, 239, 0.5);
-      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(17, 205, 239, 0.15);
+      transform: translateY(-3px);
+      border-color: rgba(17, 205, 239, 0.45);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 22px rgba(17, 205, 239, 0.14);
     }
     @keyframes flashUp {
       0% { background-color: rgba(45, 206, 137, 0.35); border-color: rgba(45, 206, 137, 0.9); }
@@ -102,21 +109,18 @@
 </head>
 <body class="text-slate-100 font-sans antialiased selection:bg-[#11cdef] selection:text-slate-950 min-h-screen flex flex-col">
 
-  <!-- HUMAN WELCOME TICKER TAPE -->
+  <!-- TOP LIVE SESSION INTELLIGENCE BAR -->
   <div class="bg-gradient-to-r from-[#5e72e4]/30 via-[#11cdef]/25 to-[#2dce89]/30 border-b border-white/10 text-xs py-2 px-4 text-center backdrop-blur-md">
     <span class="inline-flex items-center gap-1.5 font-semibold text-slate-200">
       <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-ping"></span>
-      <span id="human-greeting">Welcome back trader!</span> — <span id="ticker-mood-text" class="text-[#11cdef]">Syncing global markets...</span>
+      <span id="human-greeting">Trader Cockpit Active</span> — <span id="ticker-mood-text" class="text-[#11cdef] font-bold">Scanning global liquidity windows...</span>
     </span>
-    <a href="https://www.tradingview.com/" target="_blank" rel="sponsored noopener" class="text-white font-bold underline hover:text-[#11cdef] ml-2 transition">
-      Pro Charts Free →
-    </a>
   </div>
 
-  <!-- STICKY NAVBAR -->
-  <nav class="sticky top-0 z-40 border-b border-white/5 bg-[#070b19]/80 backdrop-blur-xl">
-    <div class="max-w-7xl w-full mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
-      <a href="https://marketclock.live/" class="flex items-center gap-3 group">
+  <!-- STICKY WORKSTATION NAVBAR -->
+  <nav class="sticky top-0 z-40 border-b border-white/5 bg-[#070b19]/85 backdrop-blur-xl">
+    <div class="max-w-7xl w-full mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="https://marketclock.live/" class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#5e72e4] via-[#11cdef] to-[#2dce89] p-[1px] shadow-[0_0_20px_rgba(17,205,239,0.3)]">
           <div class="w-full h-full bg-[#070b19] rounded-[11px] flex items-center justify-center">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-pulse"></span>
@@ -125,76 +129,148 @@
         <div>
           <div class="font-black tracking-tight text-lg leading-none text-white flex items-center gap-1.5">
             MARKET<span class="bg-gradient-to-r from-[#11cdef] to-[#2dce89] bg-clip-text text-transparent">CLOCK</span>
-            <span class="text-[10px] font-mono font-bold bg-[#5e72e4]/20 text-[#11cdef] border border-[#11cdef]/30 px-1.5 py-0.5 rounded-md">.LIVE</span>
+            <span class="text-[10px] font-mono font-bold bg-[#5e72e4]/20 text-[#11cdef] border border-[#11cdef]/30 px-1.5 py-0.5 rounded-md">PRO</span>
           </div>
-          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">BUILT FOR TRADERS WHO BREATHE</p>
+          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">SESSION MAP • BELL ALARMS • RISK SIZER</p>
         </div>
       </a>
 
-      <!-- NAVIGATION LINKS -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <div class="hidden md:flex items-center gap-4 text-xs font-semibold text-slate-400 mr-3">
-          <a href="/nyse-countdown.html" class="text-[#11cdef] hover:text-white transition">🇺🇸 NYSE Bell</a>
-          <a href="/dfm-dubai-market-hours.html" class="text-[#2dce89] hover:text-white transition">🇦🇪 Dubai DFM</a>
-          <a href="#watchlist-section" class="hover:text-white transition">Live Pulse</a>
-          <a href="#chart-section" class="hover:text-white transition">Charts</a>
+      <!-- WORKSTATION TOOLS & AUDIO BELL CONTROLS -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="hidden lg:flex items-center gap-4 text-xs font-semibold text-slate-400 mr-2">
+          <a href="#overlap-section" class="hover:text-white transition">24H Overlap Map</a>
+          <a href="#calculator-section" class="text-[#2dce89] hover:text-white transition">🧮 Risk Calculator</a>
+          <a href="#news-section" class="text-[#11cdef] hover:text-white transition">⚡ Live News</a>
+          <a href="/nyse-countdown.html" class="hover:text-white transition">🇺🇸 NYSE</a>
+          <a href="/dfm-dubai-market-hours.html" class="hover:text-white transition">🇦🇪 DFM</a>
         </div>
-        <button id="toggle-format-btn" class="text-xs argon-glass hover:border-[#11cdef]/50 text-slate-200 px-3.5 py-2 rounded-xl transition font-semibold cursor-pointer">
-          24H / 12H
+
+        <!-- AUDIBLE BELL ALARM BUTTON (Keeps users on the tab all day!) -->
+        <button id="sound-toggle-btn" class="text-xs argon-glass hover:border-[#2dce89] text-slate-200 px-3 py-1.5 rounded-xl transition font-bold flex items-center gap-1.5 cursor-pointer">
+          <span id="sound-icon">🔕</span> <span id="sound-label">Bell Audio: OFF</span>
         </button>
-        <button id="fullscreen-btn" class="text-xs bg-gradient-to-r from-[#5e72e4] to-[#11cdef] hover:opacity-95 text-white px-4 py-2 rounded-xl transition flex items-center gap-1.5 font-bold shadow-lg shadow-[#5e72e4]/20 cursor-pointer">
-          <span>⛶</span> Focus Desk Mode
+        <button id="test-bell-btn" title="Test NYSE Opening Bell Chime" class="text-xs argon-glass hover:border-[#11cdef] text-[#11cdef] px-2.5 py-1.5 rounded-xl transition font-semibold cursor-pointer">
+          🔊 Test Bell
+        </button>
+        <button id="toggle-format-btn" class="text-xs argon-glass hover:border-[#11cdef]/50 text-slate-200 px-2.5 py-1.5 rounded-xl transition font-semibold cursor-pointer">
+          24H/12H
+        </button>
+        <button id="fullscreen-btn" class="text-xs bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white px-3 py-1.5 rounded-xl transition font-bold cursor-pointer">
+          ⛶ Desk
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- MAIN TERMINAL CONTAINER -->
+  <!-- MAIN WORKSTATION CONTAINER -->
   <main class="max-w-7xl w-full mx-auto px-4 py-6 flex-grow">
 
-    <!-- HERO: HUMANIZED ATOMIC MASTER CLOCK -->
-    <header class="argon-glass rounded-3xl p-6 sm:p-10 mb-6 relative overflow-hidden">
+    <!-- HERO: MASTER CLOCK + KILLZONE RADAR -->
+    <header class="argon-glass rounded-3xl p-6 sm:p-8 mb-6 relative overflow-hidden">
       <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#5e72e4]/20 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-[#11cdef]/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
         <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2dce89]/10 border border-[#2dce89]/30 mb-3 shadow-inner">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2dce89]/10 border border-[#2dce89]/30 mb-2">
             <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-pulse"></span>
             <span id="local-timezone-label" class="text-[11px] uppercase tracking-widest text-[#2dce89] font-bold">
               Local Timezone Active
             </span>
           </div>
-          <h1 id="main-clock" class="font-mono text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight tabular-nums text-white leading-none">
+          <h1 id="main-clock" class="font-mono text-5xl sm:text-7xl font-extrabold tracking-tight tabular-nums text-white leading-none">
             00:00:00<span class="text-2xl sm:text-4xl text-slate-500">.00</span>
           </h1>
-          <p id="main-date" class="text-base sm:text-lg text-slate-300 font-medium mt-3">
+          <p id="main-date" class="text-sm sm:text-base text-slate-300 font-medium mt-2">
             Loading calendar...
           </p>
         </div>
 
-        <!-- REASSURING SUMMARY PILLS -->
+        <!-- TRADER TELEMETRY CARDS -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto">
-          <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">UTC Reference</span>
+          <div class="bg-slate-950/70 border border-white/10 rounded-2xl p-4 text-center">
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">UTC / GMT Reference</span>
             <span id="utc-clock" class="font-mono text-xl sm:text-2xl font-bold text-[#11cdef] tabular-nums mt-1 block">00:00:00</span>
-            <span class="text-[10px] text-slate-500">Global Standard</span>
+            <span class="text-[10px] text-slate-500">Institutional Clock</span>
           </div>
-          <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Active Exchanges</span>
-            <span id="open-markets-count" class="font-mono text-xl sm:text-2xl font-bold text-[#2dce89] mt-1 block">0 / 4</span>
-            <span class="text-[10px] text-slate-500">Hubs Open Now</span>
+          <div class="bg-slate-950/70 border border-white/10 rounded-2xl p-4 text-center">
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Volatility Window</span>
+            <span id="killzone-status" class="font-mono text-sm sm:text-base font-extrabold text-[#2dce89] mt-1.5 block">Calculating...</span>
+            <span id="killzone-sub" class="text-[10px] text-slate-500 block mt-0.5">Session Liquidity</span>
           </div>
-          <div class="col-span-2 sm:col-span-1 bg-slate-950/60 border border-white/10 rounded-2xl p-4 text-center">
-            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Pinned Tab</span>
+          <div class="col-span-2 sm:col-span-1 bg-slate-950/70 border border-white/10 rounded-2xl p-4 text-center">
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Active Risk Asset</span>
             <span id="hero-pinned-ticker" class="font-mono text-xl sm:text-2xl font-bold text-white mt-1 block">NVDA</span>
-            <span class="text-[10px] text-[#11cdef]">Live in Title</span>
+            <span class="text-[10px] text-[#11cdef]">Synced to Calculator</span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- SPONSOR UNIT #1 -->
+    <!-- =================================================================== -->
+    <!-- NEW FEATURE #1: VISUAL 24-HOUR GLOBAL SESSION OVERLAP TIMELINE      -->
+    <!-- =================================================================== -->
+    <section id="overlap-section" class="argon-glass rounded-3xl p-5 sm:p-6 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        <div>
+          <h2 class="text-lg font-extrabold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#11cdef]"></span>
+            24-Hour Global Session Overlap Visualizer (UTC)
+          </h2>
+          <p class="text-xs text-slate-400">
+            The glowing vertical line shows where we are right now in the 24-hour trading cycle. Peak liquidity occurs when London & New York overlap (13:30–16:30 UTC).
+          </p>
+        </div>
+        <span id="overlap-badge" class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#5e72e4]/20 text-[#11cdef] border border-[#11cdef]/30 whitespace-nowrap">
+          UTC Cycle
+        </span>
+      </div>
+
+      <!-- 24H TIMELINE TRACKS -->
+      <div class="relative bg-slate-950/80 border border-white/10 rounded-2xl p-4 overflow-hidden">
+        <!-- Hour Ruler (00 to 23 UTC) -->
+        <div class="grid grid-cols-12 text-[10px] font-mono text-slate-500 pb-2 border-b border-white/5">
+          <span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span>
+          <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
+          <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
+        </div>
+
+        <!-- Live Vertical "NOW" Laser Line -->
+        <div id="timeline-now-line" class="absolute top-0 bottom-0 w-[2px] bg-[#2dce89] shadow-[0_0_12px_#2dce89] z-20 pointer-events-none" style="left: 50%;">
+          <span id="timeline-now-label" class="bg-[#2dce89] text-slate-950 font-mono font-extrabold text-[9px] px-1.5 py-0.5 rounded absolute top-1 -translate-x-1/2 whitespace-nowrap">
+            NOW
+          </span>
+        </div>
+
+        <!-- Session Bars (Positioned by UTC Hours) -->
+        <div class="space-y-2.5 mt-3 text-xs">
+          <!-- Tokyo: 00:00 - 06:30 UTC (0% to 27.08%) -->
+          <div class="relative h-7 bg-slate-900 rounded-lg flex items-center px-2">
+            <span class="z-10 font-semibold text-slate-300 text-[11px] w-32">🇯🇵 Tokyo (TSE)</span>
+            <div class="absolute top-1 bottom-1 bg-purple-500/30 border border-purple-400/50 rounded-md" style="left: 0%; width: 27.1%;"></div>
+          </div>
+          <!-- Dubai: 06:00 - 11:00 UTC (25% to 45.83%) -->
+          <div class="relative h-7 bg-slate-900 rounded-lg flex items-center px-2">
+            <span class="z-10 font-semibold text-slate-300 text-[11px] w-32">🇦🇪 Dubai (DFM)</span>
+            <div class="absolute top-1 bottom-1 bg-emerald-500/30 border border-emerald-400/50 rounded-md" style="left: 25%; width: 20.8%;"></div>
+          </div>
+          <!-- London: 07:00 - 15:30 UTC (29.17% to 64.58%) -->
+          <div class="relative h-7 bg-slate-900 rounded-lg flex items-center px-2">
+            <span class="z-10 font-semibold text-slate-300 text-[11px] w-32">🇬🇧 London (LSE)</span>
+            <div class="absolute top-1 bottom-1 bg-cyan-500/30 border border-cyan-400/50 rounded-md" style="left: 29.2%; width: 35.4%;"></div>
+          </div>
+          <!-- New York: 13:30 - 20:00 UTC (56.25% to 83.33%) -->
+          <div class="relative h-7 bg-slate-900 rounded-lg flex items-center px-2">
+            <span class="z-10 font-semibold text-slate-300 text-[11px] w-32">🇺🇸 New York (NYSE)</span>
+            <div class="absolute top-1 bottom-1 bg-amber-500/30 border border-amber-400/60 rounded-md flex items-center justify-center" style="left: 56.25%; width: 27.1%;">
+              <span class="text-[9px] font-mono font-bold text-amber-300 hidden sm:inline">🔥 Wall Street Core</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPONSOR UNIT #1 (2460095) -->
     <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
       <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Partner</span>
       <div style="width: 100%; margin: auto; position: relative; z-index: 10;">
@@ -202,27 +278,21 @@
       </div>
     </div>
 
-    <!-- SECTION 1: GLOBAL EXCHANGES -->
+    <!-- SECTION 1: GLOBAL STOCK EXCHANGE CLOCKS & BELL COUNTDOWNS -->
     <section id="exchange-section" class="mb-10">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
         <div>
           <h2 class="text-xl font-extrabold text-white flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#11cdef]"></span>
-            Global Stock Exchange Clocks & Bell Countdowns
+            Global Exchange Clocks & Bell Countdowns
           </h2>
-          <p class="text-xs text-slate-400">Never miss an open or close. Real-time countdowns tailored to your browser session.</p>
+          <p class="text-xs text-slate-400">Turn on "Bell Audio" in the top bar to hear an automatic chime when any exchange opens or closes.</p>
         </div>
-        <span class="text-xs font-mono text-slate-400 bg-slate-900/80 border border-white/10 px-3 py-1 rounded-lg">
-          Live DST Sync
-        </span>
       </div>
-
-      <div id="exchange-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- JS Injected -->
-      </div>
+      <div id="exchange-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
     </section>
 
-    <!-- SECTION 2: LIVE MARKET PULSE & WATCHLIST -->
+    <!-- SECTION 2: LIVE MARKET PULSE & CUSTOM WATCHLIST -->
     <section id="watchlist-section" class="mb-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-4">
         <div>
@@ -231,7 +301,7 @@
             Live Market Pulse & Custom Watchlist
           </h2>
           <p class="text-xs text-slate-400 mt-0.5">
-            Click any card to instantly load its live candlestick chart and pin its price to your browser tab.
+            Click any card to load its chart, pin its price to your browser tab, AND auto-fill its live price into the Position Size Calculator below.
           </p>
         </div>
 
@@ -239,7 +309,7 @@
           <input 
             id="ticker-input" 
             type="text" 
-            placeholder="Add Stock (e.g. AMD, META, TSLA)" 
+            placeholder="Add Stock (e.g. AMD, META, PLTR)" 
             maxlength="10"
             class="argon-glass focus:border-[#11cdef] focus:outline-none text-white text-xs sm:text-sm rounded-xl px-4 py-2.5 uppercase w-52 sm:w-64 font-mono placeholder:font-sans placeholder:text-slate-500"
           >
@@ -253,7 +323,6 @@
         </form>
       </div>
 
-      <!-- TELEMETRY BAR -->
       <div class="argon-glass rounded-xl px-4 py-2.5 mb-4 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
         <div class="flex flex-wrap items-center gap-5">
           <div class="flex items-center gap-2">
@@ -266,16 +335,88 @@
           </div>
         </div>
         <span id="pinned-indicator" class="text-[#11cdef] font-mono font-bold text-xs">
-          📌 Active Chart: NVDA
+          📌 Active Asset: NVDA
         </span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid">
-        <!-- JS Injected -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ticker-grid"></div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- NEW FEATURE #2: POSITION SIZE & STOP-LOSS RISK CALCULATOR           -->
+    <!-- (Solves a real daily problem before every single trade!)            -->
+    <!-- =================================================================== -->
+    <section id="calculator-section" class="argon-glass rounded-3xl p-5 sm:p-7 mb-10 border border-[#2dce89]/30">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest bg-[#2dce89]/20 text-[#2dce89] px-2.5 py-0.5 rounded-full font-bold">Interactive Trader Tool</span>
+          <h2 class="text-xl font-extrabold text-white mt-1">
+            🧮 Instant Position Size & Risk/Reward Calculator
+          </h2>
+          <p class="text-xs text-slate-400">
+            Automatically synced with your selected watchlist card (<strong id="calc-asset-label" class="text-[#11cdef]">NVDA</strong>). Calculate exact shares/units to buy without blowing your account.
+          </p>
+        </div>
+        <button id="sync-live-price-btn" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-[#11cdef]/40 text-[#11cdef] px-3.5 py-2 rounded-xl cursor-pointer transition">
+          ⟳ Pull Latest Live Price
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <!-- Inputs (7 cols) -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Account Balance ($ USD)</label>
+            <input id="calc-balance" type="number" value="10000" step="100" class="w-full bg-slate-950/90 border border-white/15 focus:border-[#11cdef] rounded-xl px-3.5 py-2.5 font-mono text-white text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Risk Per Trade (%)</label>
+            <div class="flex gap-2">
+              <input id="calc-risk-pct" type="number" value="1.0" step="0.25" max="100" class="w-full bg-slate-950/90 border border-white/15 focus:border-[#11cdef] rounded-xl px-3.5 py-2.5 font-mono text-white text-sm">
+              <button type="button" onclick="setRiskPct(0.5)" class="px-2.5 bg-slate-900 border border-white/10 rounded-lg text-xs font-mono hover:border-[#11cdef] cursor-pointer">0.5%</button>
+              <button type="button" onclick="setRiskPct(1.0)" class="px-2.5 bg-slate-900 border border-white/10 rounded-lg text-xs font-mono hover:border-[#11cdef] cursor-pointer">1%</button>
+              <button type="button" onclick="setRiskPct(2.0)" class="px-2.5 bg-slate-900 border border-white/10 rounded-lg text-xs font-mono hover:border-[#11cdef] cursor-pointer">2%</button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Entry Price ($)</label>
+            <input id="calc-entry" type="number" value="138.00" step="0.01" class="w-full bg-slate-950/90 border border-white/15 focus:border-[#11cdef] rounded-xl px-3.5 py-2.5 font-mono text-white text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Stop-Loss Price ($)</label>
+            <input id="calc-stop" type="number" value="135.00" step="0.01" class="w-full bg-slate-950/90 border border-white/15 focus:border-[#f5365c] rounded-xl px-3.5 py-2.5 font-mono text-white text-sm">
+          </div>
+        </div>
+
+        <!-- Output Results Box (5 cols) -->
+        <div class="lg:col-span-5 bg-slate-950/90 border border-[#2dce89]/40 rounded-2xl p-5 space-y-3">
+          <div class="flex justify-between items-center border-b border-white/10 pb-2.5">
+            <span class="text-xs text-slate-400">Position Size to Buy:</span>
+            <span id="res-shares" class="font-mono text-2xl font-extrabold text-[#2dce89]">33.33 Shares</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-slate-400">Max Cash at Risk (If Stopped Out):</span>
+            <span id="res-cash-risk" class="font-mono font-bold text-[#f5365c]">-$100.00</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-slate-400">Total Position Capital Needed:</span>
+            <span id="res-capital" class="font-mono font-bold text-white">$4,600.00</span>
+          </div>
+          <div class="pt-2 border-t border-white/10 grid grid-cols-2 gap-2 text-center">
+            <div class="bg-slate-900/90 rounded-xl p-2">
+              <span class="text-[10px] text-slate-400 block">1:2 Target Price (+2R)</span>
+              <span id="res-tp2" class="font-mono text-sm font-bold text-[#11cdef]">$144.00 (+$200)</span>
+            </div>
+            <div class="bg-slate-900/90 rounded-xl p-2">
+              <span class="text-[10px] text-slate-400 block">1:3 Target Price (+3R)</span>
+              <span id="res-tp3" class="font-mono text-sm font-bold text-[#2dce89]">$147.00 (+$300)</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SPONSOR UNIT #2 -->
+    <!-- SPONSOR UNIT #2 (2460097) -->
     <div class="argon-glass rounded-2xl p-3 my-6 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
       <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Featured Offer</span>
       <div style="width: 100%; margin: auto; position: relative; z-index: 10;">
@@ -283,66 +424,52 @@
       </div>
     </div>
 
-    <!-- SECTION 3: TRADINGVIEW CHART -->
-    <section id="chart-section" class="mb-12">
-      <div class="argon-glass rounded-3xl p-4 sm:p-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div class="flex items-center gap-3">
-            <span class="bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white text-[11px] font-extrabold px-3 py-1 rounded-lg shadow">
-              INTERACTIVE CHART
+    <!-- SECTION 3: TRADINGVIEW CHART + BREAKING NEWS SPLIT VIEW -->
+    <section id="chart-section" class="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Chart (8 Cols) -->
+      <div class="lg:col-span-8 argon-glass rounded-3xl p-4 sm:p-5 flex flex-col">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-lg">
+              LIVE CHART
             </span>
-            <h2 id="chart-heading" class="text-base sm:text-lg font-extrabold text-white">
-              NVIDIA Corp. (NVDA) — Real-Time Candlestick Chart
+            <h2 id="chart-heading" class="text-sm sm:text-base font-extrabold text-white">
+              NVIDIA Corp. (NVDA) — Real-Time Chart
             </h2>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs text-slate-400">Quick Switch:</span>
-            <button onclick="selectAsset('NVDA')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 cursor-pointer">NVDA</button>
-            <button onclick="selectAsset('AAPL')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 cursor-pointer">AAPL</button>
-            <button onclick="selectAsset('BTCUSDT')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 cursor-pointer">BTC</button>
-            <button onclick="selectAsset('PAXGUSDT')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2.5 py-1 rounded-lg text-slate-200 cursor-pointer">GOLD</button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="selectAsset('NVDA')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2 py-1 rounded text-slate-200 cursor-pointer">NVDA</button>
+            <button onclick="selectAsset('AAPL')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2 py-1 rounded text-slate-200 cursor-pointer">AAPL</button>
+            <button onclick="selectAsset('BTCUSDT')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2 py-1 rounded text-slate-200 cursor-pointer">BTC</button>
+            <button onclick="selectAsset('PAXGUSDT')" class="text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-white/10 px-2 py-1 rounded text-slate-200 cursor-pointer">GOLD</button>
           </div>
         </div>
-
-        <div class="w-full h-[480px] sm:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-[#050814]" id="tv-chart-container"></div>
+        <div class="w-full h-[460px] sm:h-[520px] rounded-2xl overflow-hidden border border-white/10 bg-[#050814]" id="tv-chart-container"></div>
       </div>
 
-      <!-- AFFILIATE CARDS -->
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="argon-glass argon-card-hover rounded-2xl p-5 flex items-center justify-between gap-4 border-l-4 border-l-[#2dce89]">
-          <div>
-            <span class="text-[10px] uppercase tracking-wider bg-[#2dce89]/20 text-[#2dce89] font-extrabold px-2.5 py-0.5 rounded-full">Global Equities</span>
-            <h3 class="font-extrabold text-white text-base mt-1.5">Trade US Stocks with $0 Commission</h3>
-            <p class="text-slate-400 text-xs mt-0.5">Instant execution and fractional shares.</p>
+      <!-- ================================================================= -->
+      <!-- NEW FEATURE #3: LIVE FINNHUB BREAKING MARKET NEWS FEED (4 Cols)   -->
+      <!-- ================================================================= -->
+      <div id="news-section" class="lg:col-span-4 argon-glass rounded-3xl p-4 sm:p-5 flex flex-col h-[530px] sm:h-[590px]">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#11cdef] animate-ping"></span>
+            <h2 class="text-base font-extrabold text-white">Breaking Market Wire</h2>
           </div>
-          <a href="https://www.tradingview.com/" target="_blank" rel="sponsored noopener" class="whitespace-nowrap bg-[#2dce89] hover:opacity-95 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-[#2dce89]/20">
-            Start Trading →
-          </a>
+          <span class="text-[10px] font-mono text-slate-400">Finnhub Live Feed</span>
         </div>
-
-        <div class="argon-glass argon-card-hover rounded-2xl p-5 flex items-center justify-between gap-4 border-l-4 border-l-[#11cdef]">
-          <div>
-            <span class="text-[10px] uppercase tracking-wider bg-[#11cdef]/20 text-[#11cdef] font-extrabold px-2.5 py-0.5 rounded-full">24/7 Crypto & Gold</span>
-            <h3 class="font-extrabold text-white text-base mt-1.5">Trade Bitcoin & Gold 24/7</h3>
-            <p class="text-slate-400 text-xs mt-0.5">Markets closed? Trade anytime.</p>
-          </div>
-          <a href="https://www.binance.com/" target="_blank" rel="sponsored noopener" class="whitespace-nowrap bg-[#11cdef] hover:opacity-95 text-slate-950 font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-[#11cdef]/20">
-            Trade 24/7 →
-          </a>
+        <div id="news-feed-container" class="space-y-3 overflow-y-auto pr-1 flex-grow text-xs">
+          <div class="text-slate-400 py-8 text-center">Loading breaking financial headlines...</div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: SEO MANUAL -->
+    <!-- SECTION 4: SEO REFERENCE GUIDE -->
     <section id="guide-section" class="argon-glass rounded-3xl p-6 sm:p-8 text-slate-300 space-y-6 text-sm leading-relaxed">
       <div class="border-b border-white/10 pb-4">
         <span class="text-xs font-mono uppercase tracking-widest text-[#11cdef] font-bold">Trader Reference Manual</span>
         <h2 class="text-2xl font-extrabold text-white mt-1">Global Stock Market Opening & Closing Hours Guide</h2>
       </div>
-      
-      <p>
-        Precision timing is essential for day traders, institutional desks, and retail investors. <strong>MarketClock.live</strong> synchronizes your browser with the official local timezones of the world's premier financial hubs—automatically adjusting for Daylight Saving Time (DST) transitions across North America, Europe, the Middle East, and Asia.
-      </p>
       
       <div class="overflow-x-auto rounded-2xl border border-white/10">
         <table class="w-full text-left border-collapse">
@@ -389,7 +516,7 @@
       </div>
     </section>
 
-    <!-- SPONSOR UNIT #3 -->
+    <!-- SPONSOR UNIT #3 (2460101) -->
     <div class="argon-glass rounded-2xl p-3 mt-8 text-center min-h-[105px] flex flex-col items-center justify-center overflow-hidden">
       <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Partner</span>
       <div id="aads-frame-3" style="width: 100%; margin: auto; position: relative; z-index: 10;">
@@ -408,10 +535,7 @@
         <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-[#11cdef] underline cursor-pointer">Privacy & Terms</button>
         <a href="https://marketclock.live/sitemap.xml" class="hover:text-[#11cdef] underline">Sitemap</a>
       </div>
-      <p class="max-w-3xl mx-auto leading-relaxed">
-        <strong>Financial Disclaimer:</strong> MarketClock.live is built for educational and informational purposes. Not financial advice.
-      </p>
-      <p class="text-slate-600">© 2026 MarketClock.live — Designed with care for traders worldwide.</p>
+      <p class="text-slate-600">© 2026 MarketClock.live — Trader Workstation Architecture.</p>
     </div>
   </footer>
 
@@ -419,31 +543,64 @@
   <div id="legal-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="argon-glass max-w-2xl w-full rounded-3xl p-6 max-h-[82vh] overflow-y-auto text-xs text-slate-300 space-y-4">
       <div class="flex justify-between items-center border-b border-white/10 pb-3">
-        <h3 class="text-base font-extrabold text-white">Privacy Policy & Disclaimer</h3>
+        <h3 class="text-base font-extrabold text-white">Privacy Policy & Financial Disclaimer</h3>
         <button onclick="document.getElementById('legal-modal').classList.add('hidden')" class="text-slate-400 hover:text-white text-lg font-bold cursor-pointer">✕</button>
       </div>
-      <p>MarketClock.live respects your privacy. Watchlists are stored locally in your browser. Live data is streamed securely via public financial APIs.</p>
+      <p>MarketClock.live operates client-side in your browser. Position sizing calculations and market data are for educational purposes only and do not constitute financial advice.</p>
     </div>
   </div>
 
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
-  <!-- HUMANIZED MASTER SCRIPT -->
+  <!-- MASTER WORKSTATION ENGINE -->
   <script>
     const FINNHUB_API_KEY = 'dbfs1dhr01qiahubgldgdbfs1dhr01qiahubgle0';
     let use12Hour = false;
     let pinnedSymbol = 'NVDA';
     let fhSocket = null;
+    let soundArmed = false;
+    let lastExStates = {};
 
-    // Human Greeting Logic
-    const hrLocal = new Date().getHours();
-    let greet = "Welcome back trader";
-    if (hrLocal >= 4 && hrLocal < 12) greet = "Good morning, happy trading";
-    else if (hrLocal >= 12 && hrLocal < 17) greet = "Good afternoon session";
-    else if (hrLocal >= 17 && hrLocal < 22) greet = "Evening session active";
-    else greet = "Late night global terminal";
-    document.getElementById('human-greeting').textContent = greet;
+    // =========================================================================
+    // 1. WEB AUDIO API: SYNTHESIZED NYSE OPENING/CLOSING BELL CHIME
+    // =========================================================================
+    function playTradingBellChime() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioCtx();
+        const freqs = [523.25, 659.25, 783.99, 1046.50]; // Brass harmonic chord
+        freqs.forEach((f, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = idx % 2 === 0 ? 'triangle' : 'sine';
+          osc.frequency.setValueAtTime(f, ctx.currentTime);
+          gain.gain.setValueAtTime(0.18 / (idx + 1), ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2.4);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + idx * 0.06);
+          osc.stop(ctx.currentTime + 2.5);
+        });
+      } catch (e) {}
+    }
 
+    document.getElementById('sound-toggle-btn').addEventListener('click', () => {
+      soundArmed = !soundArmed;
+      document.getElementById('sound-icon').textContent = soundArmed ? '🔔' : '🔕';
+      document.getElementById('sound-label').textContent = soundArmed ? 'Bell Audio: ARMED' : 'Bell Audio: OFF';
+      document.getElementById('sound-toggle-btn').className = soundArmed
+        ? 'text-xs bg-[#2dce89]/20 border border-[#2dce89] text-[#2dce89] px-3 py-1.5 rounded-xl transition font-bold flex items-center gap-1.5 cursor-pointer'
+        : 'text-xs argon-glass hover:border-[#2dce89] text-slate-200 px-3 py-1.5 rounded-xl transition font-bold flex items-center gap-1.5 cursor-pointer';
+      if (soundArmed) playTradingBellChime();
+    });
+
+    document.getElementById('test-bell-btn').addEventListener('click', () => {
+      playTradingBellChime();
+    });
+
+    // =========================================================================
+    // 2. GLOBAL EXCHANGES + 24H OVERLAP MAP + KILLZONE ENGINE
+    // =========================================================================
     const EXCHANGES = [
       { id: 'nyse', name: 'New York (NYSE)', flag: '🇺🇸', tz: 'America/New_York', open: 9.5,  close: 16.0 },
       { id: 'lse',  name: 'London (LSE)',    flag: '🇬🇧', tz: 'Europe/London',    open: 8.0,  close: 16.5 },
@@ -491,21 +648,14 @@
       return `${String(hrs).padStart(2, '0')}h ${String(mins).padStart(2, '0')}m ${String(secs).padStart(2, '0')}s`;
     }
 
-    document.getElementById('toggle-format-btn').addEventListener('click', () => {
-      use12Hour = !use12Hour;
-    });
-
+    document.getElementById('toggle-format-btn').addEventListener('click', () => { use12Hour = !use12Hour; });
     document.getElementById('fullscreen-btn').addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
-      } else {
-        document.exitFullscreen();
-      }
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen();
     });
 
     const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
     document.getElementById('local-timezone-label').textContent = `Local Time • ${userTz.replace(/_/g, ' ')}`;
-
     const WEEKDAY_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 
     function updateClocks() {
@@ -514,7 +664,7 @@
       const ms = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, '0');
       
       if (use12Hour) {
-        document.getElementById('main-clock').innerHTML = `<span class="text-4xl sm:text-6xl md:text-7xl">${timeStr}</span>`;
+        document.getElementById('main-clock').innerHTML = `<span class="text-4xl sm:text-6xl">${timeStr}</span>`;
       } else {
         document.getElementById('main-clock').innerHTML = `${timeStr}<span class="text-2xl sm:text-4xl text-slate-500">.${ms}</span>`;
       }
@@ -523,12 +673,16 @@
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
       });
 
-      document.getElementById('utc-clock').textContent = now.toLocaleTimeString('en-US', {
-        timeZone: 'UTC', hour12: false
-      });
+      const utcStr = now.toLocaleTimeString('en-US', { timeZone: 'UTC', hour12: false });
+      document.getElementById('utc-clock').textContent = utcStr;
 
-      let openCount = 0;
-      let activeExchangesList = [];
+      // Update 24H Timeline Laser Line
+      const utcSec = now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds();
+      const dayPct = (utcSec / 86400) * 100;
+      document.getElementById('timeline-now-line').style.left = `${dayPct.toFixed(2)}%`;
+      document.getElementById('timeline-now-label').textContent = `NOW ${utcStr.slice(0,5)} UTC`;
+
+      let openExchanges = [];
 
       EXCHANGES.forEach(ex => {
         const exTimeStr = now.toLocaleTimeString('en-US', { timeZone: ex.tz, hour12: use12Hour });
@@ -552,13 +706,18 @@
         const isWeekend = (wkday === 0 || wkday === 6);
         const isOpen = !isWeekend && (currentSecondsOfDay >= openSeconds && currentSecondsOfDay < closeSeconds);
 
+        // Ring Bell if state flipped between OPEN and CLOSED!
+        if (lastExStates[ex.id] !== undefined && lastExStates[ex.id] !== isOpen && soundArmed) {
+          playTradingBellChime();
+        }
+        lastExStates[ex.id] = isOpen;
+
         const badge = document.getElementById(`status-${ex.id}`);
         const countdownEl = document.getElementById(`countdown-${ex.id}`);
         const progressEl = document.getElementById(`progress-${ex.id}`);
 
         if (isOpen) {
-          openCount++;
-          activeExchangesList.push(ex.name);
+          openExchanges.push(ex.id);
           badge.textContent = '● OPEN';
           badge.className = 'text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#2dce89]/20 text-[#2dce89] border border-[#2dce89]/40';
           const secsLeft = closeSeconds - currentSecondsOfDay;
@@ -583,17 +742,97 @@
         }
       });
 
-      document.getElementById('open-markets-count').textContent = `${openCount} / ${EXCHANGES.length}`;
-      if (openCount > 0) {
-        document.getElementById('ticker-mood-text').textContent = `Active trading sessions right now: ${activeExchangesList.join(', ')}`;
+      // Killzone & Overlap Detection
+      const kzEl = document.getElementById('killzone-status');
+      const kzSub = document.getElementById('killzone-sub');
+      if (openExchanges.includes('nyse') && openExchanges.includes('lse')) {
+        kzEl.textContent = '🔥 LDN + NY OVERLAP';
+        kzEl.className = 'font-mono text-sm sm:text-base font-extrabold text-amber-400 mt-1.5 block';
+        kzSub.textContent = 'Peak Global Liquidity Window';
+        document.getElementById('ticker-mood-text').textContent = 'London & New York Overlap Active — Highest Volume of the Day';
+      } else if (openExchanges.includes('nyse')) {
+        kzEl.textContent = '🇺🇸 US CORE SESSION';
+        kzEl.className = 'font-mono text-sm sm:text-base font-extrabold text-[#2dce89] mt-1.5 block';
+        kzSub.textContent = 'Wall Street Active';
+        document.getElementById('ticker-mood-text').textContent = 'US Equities Session Open — Watch 3:30 PM ET Power Hour';
+      } else if (openExchanges.includes('lse') || openExchanges.includes('dfm')) {
+        kzEl.textContent = '🌍 EMEA SESSION';
+        kzEl.className = 'font-mono text-sm sm:text-base font-extrabold text-[#11cdef] mt-1.5 block';
+        kzSub.textContent = 'London / Dubai Active';
+        document.getElementById('ticker-mood-text').textContent = 'European & Middle East Sessions Active — Prepping for NY Open';
+      } else if (openExchanges.includes('tse')) {
+        kzEl.textContent = '🇯🇵 ASIAN SESSION';
+        kzEl.className = 'font-mono text-sm sm:text-base font-extrabold text-purple-400 mt-1.5 block';
+        kzSub.textContent = 'Tokyo Exchange Open';
+        document.getElementById('ticker-mood-text').textContent = 'Tokyo Session Active — Yen & Asian Indices Moving';
       } else {
-        document.getElementById('ticker-mood-text').textContent = `Weekend / After-hours mode • Crypto & Gold 24/7 active`;
+        kzEl.textContent = '🌙 24/7 CRYPTO & GOLD';
+        kzEl.className = 'font-mono text-sm sm:text-base font-extrabold text-slate-300 mt-1.5 block';
+        kzSub.textContent = 'Equities After-Hours';
+        document.getElementById('ticker-mood-text').textContent = 'Stock Exchanges Closed — 24/7 Bitcoin & Gold Streams Active';
       }
 
       requestAnimationFrame(updateClocks);
     }
     requestAnimationFrame(updateClocks);
 
+    // =========================================================================
+    // 3. POSITION SIZE & STOP-LOSS RISK CALCULATOR ENGINE
+    // =========================================================================
+    function runRiskCalculator() {
+      const balance = parseFloat(document.getElementById('calc-balance').value) || 0;
+      const riskPct = parseFloat(document.getElementById('calc-risk-pct').value) || 0;
+      const entry = parseFloat(document.getElementById('calc-entry').value) || 0;
+      const stop = parseFloat(document.getElementById('calc-stop').value) || 0;
+
+      const cashRisk = balance * (riskPct / 100);
+      const stopDistance = Math.abs(entry - stop);
+      const isLong = entry >= stop;
+
+      document.getElementById('res-cash-risk').textContent = `-$${cashRisk.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      if (stopDistance > 0 && entry > 0) {
+        const shares = cashRisk / stopDistance;
+        const capitalNeeded = shares * entry;
+        const tp2 = isLong ? entry + (stopDistance * 2) : entry - (stopDistance * 2);
+        const tp3 = isLong ? entry + (stopDistance * 3) : entry - (stopDistance * 3);
+
+        document.getElementById('res-shares').textContent = `${shares.toLocaleString('en-US', { maximumFractionDigits: 2 })} Units`;
+        document.getElementById('res-capital').textContent = `$${capitalNeeded.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.getElementById('res-tp2').textContent = `$${tp2.toFixed(2)} (+$${(cashRisk * 2).toFixed(0)})`;
+        document.getElementById('res-tp3').textContent = `$${tp3.toFixed(2)} (+$${(cashRisk * 3).toFixed(0)})`;
+      } else {
+        document.getElementById('res-shares').textContent = 'Set Stop ≠ Entry';
+      }
+    }
+
+    window.setRiskPct = function(val) {
+      document.getElementById('calc-risk-pct').value = val;
+      runRiskCalculator();
+    };
+
+    ['calc-balance', 'calc-risk-pct', 'calc-entry', 'calc-stop'].forEach(id => {
+      document.getElementById(id).addEventListener('input', runRiskCalculator);
+    });
+
+    function syncCalculatorWithAsset(asset) {
+      if (!asset || !asset.price) return;
+      document.getElementById('calc-asset-label').textContent = asset.symbol;
+      const p = Number(asset.price);
+      document.getElementById('calc-entry').value = p.toFixed(2);
+      // Default stop loss 2% below entry for convenience
+      document.getElementById('calc-stop').value = (p * 0.98).toFixed(2);
+      runRiskCalculator();
+    }
+
+    document.getElementById('sync-live-price-btn').addEventListener('click', () => {
+      const pinned = ASSETS.find(a => a.id === pinnedSymbol);
+      if (pinned) syncCalculatorWithAsset(pinned);
+    });
+
+    // =========================================================================
+    // 4. WATCHLIST + LIVE STREAMS + BREAKING NEWS WIRE
+    // =========================================================================
     const DEFAULT_ASSETS = [
       { id: 'NVDA',     tvSymbol: 'NASDAQ:NVDA',      symbol: 'NVDA',      name: 'NVIDIA Corp.',       price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
       { id: 'AAPL',     tvSymbol: 'NASDAQ:AAPL',      symbol: 'AAPL',      name: 'Apple Inc.',         price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: false },
@@ -606,17 +845,13 @@
     ];
 
     let savedCustom = [];
-    try {
-      savedCustom = JSON.parse(localStorage.getItem('customStockTickers') || '[]');
-    } catch (e) {}
+    try { savedCustom = JSON.parse(localStorage.getItem('customStockTickers') || '[]'); } catch (e) {}
 
     let ASSETS = [
       ...DEFAULT_ASSETS,
-      ...savedCustom
-        .filter(sym => !DEFAULT_ASSETS.some(d => d.id === sym))
-        .map(sym => ({
-          id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Equity)`, price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: true
-        }))
+      ...savedCustom.filter(sym => !DEFAULT_ASSETS.some(d => d.id === sym)).map(sym => ({
+        id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Equity)`, price: 0, prevClose: 0, change: 0, source: 'finnhub', removable: true
+      }))
     ];
 
     const tickerGrid = document.getElementById('ticker-grid');
@@ -628,9 +863,7 @@
         tickerGrid.innerHTML += `
           <div id="card-${a.id}" onclick="selectAsset('${a.id}')" class="cursor-pointer argon-glass argon-card-hover rounded-2xl p-4 relative group ${isPinned ? 'ring-2 ring-[#11cdef] border-[#11cdef]' : ''}">
             ${a.removable ? `
-              <button onclick="removeCustomTicker(event, '${a.id}')" title="Remove ticker" class="absolute top-2.5 right-2.5 text-slate-400 hover:text-[#f5365c] text-xs px-1.5 py-0.5 rounded-lg bg-slate-900/90 opacity-0 group-hover:opacity-100 transition cursor-pointer">
-                ✕
-              </button>
+              <button onclick="removeCustomTicker(event, '${a.id}')" title="Remove ticker" class="absolute top-2.5 right-2.5 text-slate-400 hover:text-[#f5365c] text-xs px-1.5 py-0.5 rounded-lg bg-slate-900/90 opacity-0 group-hover:opacity-100 transition cursor-pointer">✕</button>
             ` : ''}
             <div class="flex justify-between items-start mb-1">
               <div>
@@ -654,26 +887,14 @@
     function loadTradingViewChart(asset) {
       const container = document.getElementById('tv-chart-container');
       container.innerHTML = '<div id="tv_chart_inner" class="w-full h-full"></div>';
-      document.getElementById('chart-heading').textContent = `${asset.name} (${asset.symbol}) — Real-Time Candlestick Chart`;
+      document.getElementById('chart-heading').textContent = `${asset.name} (${asset.symbol}) — Real-Time Chart`;
 
       if (typeof TradingView !== 'undefined') {
         new TradingView.widget({
-          autosize: true,
-          symbol: asset.tvSymbol || asset.id,
-          interval: '15',
-          timezone: userTz || 'Etc/UTC',
-          theme: 'dark',
-          style: '1',
-          locale: 'en',
-          toolbar_bg: '#070b19',
-          enable_publishing: false,
-          hide_top_toolbar: false,
-          hide_legend: false,
-          save_image: false,
-          container_id: 'tv_chart_inner',
-          backgroundColor: '#050814',
-          gridColor: 'rgba(255, 255, 255, 0.04)',
-          studies: ['Volume@tv-basicstudies']
+          autosize: true, symbol: asset.tvSymbol || asset.id, interval: '15', timezone: userTz || 'Etc/UTC',
+          theme: 'dark', style: '1', locale: 'en', toolbar_bg: '#070b19', enable_publishing: false,
+          hide_top_toolbar: false, hide_legend: false, save_image: false, container_id: 'tv_chart_inner',
+          backgroundColor: '#050814', gridColor: 'rgba(255, 255, 255, 0.04)', studies: ['Volume@tv-basicstudies']
         });
       }
     }
@@ -682,12 +903,11 @@
       pinnedSymbol = id;
       const asset = ASSETS.find(a => a.id === id);
       if (asset) {
-        document.getElementById('pinned-indicator').textContent = `📌 Active Chart: ${asset.symbol}`;
+        document.getElementById('pinned-indicator').textContent = `📌 Active Asset: ${asset.symbol}`;
         document.getElementById('hero-pinned-ticker').textContent = asset.symbol;
         loadTradingViewChart(asset);
-        if (typeof gtag === 'function') {
-          gtag('event', 'select_stock_chart', { ticker_symbol: asset.symbol });
-        }
+        syncCalculatorWithAsset(asset);
+        if (typeof gtag === 'function') gtag('event', 'select_stock_chart', { ticker_symbol: asset.symbol });
       }
       renderTickerCards();
       updateDocumentTitle();
@@ -698,20 +918,14 @@
       ASSETS = ASSETS.filter(a => a.id !== sym);
       savedCustom = savedCustom.filter(s => s !== sym);
       localStorage.setItem('customStockTickers', JSON.stringify(savedCustom));
-      if (fhSocket && fhSocket.readyState === WebSocket.OPEN) {
-        fhSocket.send(JSON.stringify({ type: 'unsubscribe', symbol: sym }));
-      }
-      if (pinnedSymbol === sym) {
-        selectAsset('NVDA');
-      } else {
-        renderTickerCards();
-      }
+      if (fhSocket && fhSocket.readyState === WebSocket.OPEN) fhSocket.send(JSON.stringify({ type: 'unsubscribe', symbol: sym }));
+      if (pinnedSymbol === sym) selectAsset('NVDA');
+      else renderTickerCards();
     };
 
     renderTickerCards();
-    window.addEventListener('load', () => {
-      loadTradingViewChart(ASSETS[0]);
-    });
+    runRiskCalculator();
+    window.addEventListener('load', () => { loadTradingViewChart(ASSETS[0]); });
 
     function updateDocumentTitle() {
       const pinned = ASSETS.find(a => a.id === pinnedSymbol);
@@ -721,11 +935,12 @@
         const priceFormatted = '$' + Number(pinned.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.title = `${arrow} ${pinned.symbol} ${priceFormatted} | ${nowStr} MarketClock.live`;
       } else {
-        document.title = `${nowStr} | MarketClock.live — Global Stock Market Clock`;
+        document.title = `${nowStr} | MarketClock.live — Trader Workstation`;
       }
     }
     setInterval(updateDocumentTitle, 1000);
 
+    let firstCalcSyncDone = false;
     function updateTickerUI(id, newPrice, pctChange, animate = true) {
       const priceEl = document.getElementById(`price-${id}`);
       const chgEl = document.getElementById(`chg-${id}`);
@@ -735,6 +950,11 @@
       const asset = ASSETS.find(a => a.id === id);
       const oldPrice = asset.price;
       asset.price = newPrice;
+
+      if (!firstCalcSyncDone && id === pinnedSymbol) {
+        firstCalcSyncDone = true;
+        syncCalculatorWithAsset(asset);
+      }
 
       priceEl.textContent = '$' + Number(newPrice).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
       
@@ -760,50 +980,27 @@
       const btn = document.getElementById('add-ticker-btn');
       const sym = input.value.trim().toUpperCase();
       if (!sym) return;
-
-      if (ASSETS.some(a => a.id === sym)) {
-        selectAsset(sym);
-        input.value = '';
-        return;
-      }
+      if (ASSETS.some(a => a.id === sym)) { selectAsset(sym); input.value = ''; return; }
 
       btn.textContent = 'Checking...';
       btn.disabled = true;
-
       try {
         const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(sym)}&token=${FINNHUB_API_KEY}`);
         const data = await res.json();
         if (data && data.c && data.c > 0) {
-          const newAsset = {
-            id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Equity)`, price: data.c, prevClose: data.pc || data.c, change: data.dp || 0, source: 'finnhub', removable: true
-          };
+          const newAsset = { id: sym, tvSymbol: sym, symbol: sym, name: `${sym} (US Equity)`, price: data.c, prevClose: data.pc || data.c, change: data.dp || 0, source: 'finnhub', removable: true };
           ASSETS.push(newAsset);
           savedCustom.push(sym);
           localStorage.setItem('customStockTickers', JSON.stringify(savedCustom));
-
-          if (fhSocket && fhSocket.readyState === WebSocket.OPEN) {
-            fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: sym }));
-          }
-          if (typeof gtag === 'function') {
-            gtag('event', 'add_custom_ticker', { ticker_symbol: sym });
-          }
+          if (fhSocket && fhSocket.readyState === WebSocket.OPEN) fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: sym }));
           selectAsset(sym);
           input.value = '';
         } else {
-          alert(`Ticker "${sym}" not found. Try US stock symbols like AMD, META, PLTR, AMZN, or NFLX.`);
+          alert(`Ticker "${sym}" not found.`);
         }
-      } catch (err) {
-        alert('Could not verify ticker symbol right now.');
-      } finally {
+      } catch (err) {} finally {
         btn.textContent = '+ Add Stock';
         btn.disabled = false;
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      const aff = e.target.closest('a[rel*="sponsored"]');
-      if (aff && typeof gtag === 'function') {
-        gtag('event', 'affiliate_click', { destination_url: aff.href });
       }
     });
 
@@ -823,37 +1020,55 @@
     fetchFinnhubSnapshots();
     setInterval(fetchFinnhubSnapshots, 60000);
 
+    // Fetch Live Breaking Market News via Finnhub API
+    async function fetchMarketNews() {
+      const container = document.getElementById('news-feed-container');
+      try {
+        const res = await fetch(`https://finnhub.io/api/v1/news?category=general&token=${FINNHUB_API_KEY}`);
+        const news = await res.json();
+        if (Array.isArray(news) && news.length > 0) {
+          container.innerHTML = '';
+          news.slice(0, 12).forEach(item => {
+            const timeAgo = Math.max(1, Math.floor((Date.now() / 1000 - item.datetime) / 60));
+            const timeLabel = timeAgo < 60 ? `${timeAgo}m ago` : `${Math.floor(timeAgo / 60)}h ago`;
+            container.innerHTML += `
+              <a href="${item.url}" target="_blank" rel="noopener" class="block bg-slate-950/70 hover:bg-slate-900 border border-white/5 hover:border-[#11cdef]/40 p-3 rounded-xl transition">
+                <div class="flex items-center justify-between text-[10px] text-slate-400 mb-1">
+                  <span class="font-bold text-[#11cdef] uppercase">${item.source}</span>
+                  <span class="font-mono">${timeLabel}</span>
+                </div>
+                <h3 class="font-semibold text-slate-200 leading-snug line-clamp-2">${item.headline}</h3>
+              </a>
+            `;
+          });
+        }
+      } catch (err) {
+        container.innerHTML = '<div class="text-slate-500 py-4 text-center">News feed temporarily unavailable.</div>';
+      }
+    }
+    fetchMarketNews();
+    setInterval(fetchMarketNews, 180000);
+
     function connectFinnhubWS() {
       fhSocket = new WebSocket(`wss://ws.finnhub.io?token=${FINNHUB_API_KEY}`);
-
       fhSocket.onopen = () => {
         document.getElementById('fh-status-dot').className = 'w-2 h-2 rounded-full bg-[#2dce89] animate-ping';
         document.getElementById('fh-status-text').textContent = 'Finnhub Stream: Live';
-        ASSETS.filter(a => a.source === 'finnhub').forEach(a => {
-          fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: a.id }));
-        });
+        ASSETS.filter(a => a.source === 'finnhub').forEach(a => fhSocket.send(JSON.stringify({ type: 'subscribe', symbol: a.id })));
       };
-
       fhSocket.onmessage = (event) => {
         const msg = JSON.parse(event.data);
         if (msg.type === 'trade' && Array.isArray(msg.data)) {
           msg.data.forEach(trade => {
-            const sym = trade.s;
-            const price = trade.p;
-            const asset = ASSETS.find(a => a.id === sym);
+            const asset = ASSETS.find(a => a.id === trade.s);
             if (asset) {
-              const pctChange = asset.prevClose ? ((price - asset.prevClose) / asset.prevClose) * 100 : asset.change;
-              updateTickerUI(sym, price, pctChange);
+              const pctChange = asset.prevClose ? ((trade.p - asset.prevClose) / asset.prevClose) * 100 : asset.change;
+              updateTickerUI(trade.s, trade.p, pctChange);
             }
           });
         }
       };
-
-      fhSocket.onclose = () => {
-        document.getElementById('fh-status-dot').className = 'w-2 h-2 rounded-full bg-amber-400';
-        document.getElementById('fh-status-text').textContent = 'Finnhub: Reconnecting...';
-        setTimeout(connectFinnhubWS, 5000);
-      };
+      fhSocket.onclose = () => { setTimeout(connectFinnhubWS, 5000); };
     }
     connectFinnhubWS();
 
@@ -861,19 +1076,13 @@
       const binanceWS = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker/ethusdt@ticker/paxgusdt@ticker/solusdt@ticker');
       binanceWS.onopen = () => {
         document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-[#2dce89] animate-ping';
-        document.getElementById('ws-status-text').textContent = 'Crypto Stream: Live';
+        document.getElementById('ws-status-text').textContent = '24/7 Crypto Stream: Live';
       };
       binanceWS.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        if (data.s && data.c) {
-          updateTickerUI(data.s, parseFloat(data.c), parseFloat(data.P));
-        }
+        if (data.s && data.c) updateTickerUI(data.s, parseFloat(data.c), parseFloat(data.P));
       };
-      binanceWS.onclose = () => {
-        document.getElementById('ws-status-dot').className = 'w-2 h-2 rounded-full bg-amber-400';
-        document.getElementById('ws-status-text').textContent = 'Crypto: Reconnecting...';
-        setTimeout(connectBinanceWS, 5000);
-      };
+      binanceWS.onclose = () => { setTimeout(connectBinanceWS, 5000); };
     }
     connectBinanceWS();
   </script>
