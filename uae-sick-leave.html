@@ -23,7 +23,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="theme-color" content="#070b19">
 
-  <!-- OPEN GRAPH (Makes the photo & headline pop up on WhatsApp, Telegram & Facebook) -->
+  <!-- OPEN GRAPH -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MarketClock.live — UAE Pulse">
   <meta property="og:title" content="No More Filing It Yourself: UAE Clinics Will Now Handle Your Sick Leave Attestation">
@@ -55,24 +55,40 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body class="text-slate-100 min-h-screen flex flex-col selection:bg-[#11cdef] selection:text-slate-950">
 
-  <!-- TOP NAVIGATION BAR -->
+  <!-- TOP TICKER BAR -->
+  <div class="bg-gradient-to-r from-[#5e72e4]/30 via-[#11cdef]/25 to-[#2dce89]/30 border-b border-white/10 text-xs py-2 px-4 text-center backdrop-blur-md">
+    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-200">
+      <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-ping"></span>
+      <span>UAE Pulse & Policy Briefing</span> — <span class="text-[#11cdef] font-bold">Zero Bureaucracy Healthcare Update</span>
+    </span>
+  </div>
+
+  <!-- STICKY ARGON HEADER / NAVBAR -->
   <nav class="sticky top-0 z-40 border-b border-white/10 bg-[#070b19]/90 backdrop-blur-xl">
-    <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between gap-3">
-      <a href="https://marketclock.live/" class="font-black text-lg text-white flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-ping"></span>
-        MARKET<span class="text-[#11cdef]">CLOCK</span>
-        <span class="text-[10px] font-mono bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-md">UAE PULSE</span>
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="https://marketclock.live/" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#5e72e4] via-[#11cdef] to-[#2dce89] p-[1px] shadow">
+          <div class="w-full h-full bg-[#070b19] rounded-[11px] flex items-center justify-center">
+            <span class="w-2 h-2 rounded-full bg-[#2dce89] animate-pulse"></span>
+          </div>
+        </div>
+        <div>
+          <span class="font-black tracking-tight text-base text-white">MARKET<span class="text-[#11cdef]">CLOCK</span></span>
+          <span class="text-[9px] font-mono bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded ml-1 font-bold">UAE PULSE</span>
+        </div>
       </a>
+
       <div class="flex items-center gap-2 text-xs font-semibold">
-        <a href="https://marketclock.live/" class="px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-white/10 transition">
-          📈 Live Market Terminal
+        <a href="https://marketclock.live/" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-white/10 transition flex items-center gap-1.5">
+          <span>📈</span> Live Terminal
         </a>
-        <a href="https://marketclock.live/dfm-dubai-market-hours.html" class="hidden sm:inline-block px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-[#2dce89] border border-white/10 transition">
-          🇦🇪 Dubai DFM Clock
+        <a href="https://marketclock.live/dfm-dubai-market-hours.html" class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-[#2dce89] border border-white/10 transition">
+          🇦🇪 Dubai DFM
         </a>
       </div>
     </div>
@@ -116,7 +132,7 @@
         <!-- Share Bar & Date -->
         <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400 border-b border-white/10 pb-4">
           <div>
-            <span class="font-semibold text-white">UAE Resident Briefing</span> • <span>Source: MoHAP / TGFM</span>
+            <span class="font-semibold text-white">UAE Resident Briefing</span> • <span class="font-mono">MoHAP / Zero Bureaucracy</span>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="shareOnWhatsApp()" class="bg-[#2dce89] hover:opacity-95 text-slate-950 font-extrabold px-3.5 py-1.5 rounded-xl cursor-pointer transition flex items-center gap-1.5">
@@ -151,3 +167,105 @@
           <p>
             Under the newly streamlined workflow, the clinic or hospital that issued the sick leave certificate will now submit and handle the official attestation request directly on the patient’s behalf—removing the need for recovering patients to navigate online portals or upload medical paperwork themselves.
           </p>
+        </div>
+
+        <!-- A-ADS SLOT #2: IN-ARTICLE BANNER (Unit 2460097) -->
+        <div class="bg-slate-950/85 border border-white/10 rounded-2xl p-3 text-center my-6">
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold block mb-1">Sponsored Financial Offer</span>
+          <div style="width: 100%; margin: auto;">
+            <iframe data-aa='2460097' src='//acceptable.a-ads.com/2460097/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+          </div>
+        </div>
+
+        <!-- Paragraph 2 & 3 -->
+        <div class="text-slate-200 text-base sm:text-lg leading-relaxed space-y-5">
+          <h2 class="text-xl font-extrabold text-white pt-2">
+            Covers Both Sick Leave and Companion Leave
+          </h2>
+          <p>
+            In addition to standard employee sick leave, the same automated arrangement now extends to <strong>patient companion leave</strong>. Previously, residents accompanying a family member for medical treatment had to initiate a separate individual application to get their leave attested for their employer.
+          </p>
+          <p>
+            By shifting the administrative step directly to the licensed healthcare provider at the point of care, the system eliminates duplicate data entry and speeds up approvals for both employees and HR departments across the Emirates.
+          </p>
+
+          <h2 class="text-xl font-extrabold text-white pt-2">
+            Part of the UAE’s "Zero Bureaucracy" Programme
+          </h2>
+          <p>
+            Officials highlighted that this service redesign is a core milestone under the UAE government’s <strong>Zero Bureaucracy programme</strong>—an initiative where government entities are evaluated on tangible improvements in everyday resident experience, faster digital turnaround times, and the removal of redundant procedural steps.
+          </p>
+        </div>
+
+        <!-- Bottom Share & Source Bar -->
+        <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <button onclick="shareOnWhatsApp()" class="flex-1 sm:flex-initial justify-center bg-[#2dce89] hover:opacity-95 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs sm:text-sm cursor-pointer transition flex items-center gap-2 shadow-lg">
+              💬 Send to Friends on WhatsApp
+            </button>
+            <button onclick="copyPageLink()" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 text-xs font-bold text-slate-200 cursor-pointer transition">
+              🔗 Copy URL
+            </button>
+          </div>
+
+          <a href="https://theglobalfilipinomagazine.com/no-more-filing-it-yourself-uae-clinics-will-now-handle-your-sick-leave-attestation/" target="_blank" rel="noopener nofollow" class="text-xs text-slate-400 hover:text-[#11cdef] underline">
+            Original Source Reference (TGFM) ↗
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- PROMO CARD BACK TO MAIN TERMINAL -->
+    <div class="argon-glass rounded-3xl p-6 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#11cdef]/30">
+      <div>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#11cdef] font-bold">Live Financial Terminal</span>
+        <h3 class="text-lg font-extrabold text-white mt-0.5">Track Dubai (DFM), NYSE & Global Market Bell Countdowns</h3>
+        <p class="text-xs text-slate-400 mt-1">Check real-time stock, gold (XAU/USD), and crypto prices on the MarketClock.live workstation.</p>
+      </div>
+      <a href="https://marketclock.live/" class="whitespace-nowrap bg-gradient-to-r from-[#5e72e4] to-[#11cdef] text-white font-extrabold px-5 py-3 rounded-xl text-xs sm:text-sm shadow-lg hover:opacity-95 transition">
+        Open Live Clock & Charts →
+      </a>
+    </div>
+
+    <!-- A-ADS SLOT #3: BOTTOM BANNER (Unit 2460101) -->
+    <div class="argon-glass rounded-2xl p-3 mt-8 text-center min-h-[100px] flex flex-col items-center justify-center overflow-hidden">
+      <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Sponsored Partner</span>
+      <div style="width: 100%; margin: auto;">
+        <iframe data-aa='2460101' src='//acceptable.a-ads.com/2460101/?size=Adaptive' style='border:0; padding:0; width:70%; min-width:300px; height:auto; overflow:hidden; display:block; margin:auto'></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PROFESSIONAL ARGON FOOTER -->
+  <footer class="border-t border-white/10 bg-[#050814] py-10 text-xs text-slate-500 mt-16 px-4">
+    <div class="max-w-4xl mx-auto space-y-5">
+      <div class="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-400">
+        <a href="https://marketclock.live/" class="hover:text-[#11cdef] transition">Live Market Terminal</a>
+        <a href="https://marketclock.live/nyse-countdown.html" class="hover:text-[#11cdef] transition">NYSE Bell Countdown</a>
+        <a href="https://marketclock.live/dfm-dubai-market-hours.html" class="hover:text-[#2dce89] transition">Dubai DFM Clock</a>
+        <a href="https://marketclock.live/sitemap.xml" class="hover:text-[#11cdef] transition">XML Sitemap</a>
+      </div>
+      <p class="max-w-2xl mx-auto leading-relaxed text-slate-500">
+        <strong>Editorial Notice:</strong> MarketClock.live provides curated UAE policy briefings and real-time financial market data for informational purposes. All rights reserved.
+      </p>
+      <p class="text-slate-600 font-mono">© 2026 MarketClock.live — Built for UAE Residents & Global Traders.</p>
+    </div>
+  </footer>
+
+  <script>
+    function shareOnWhatsApp() {
+      const text = "No More Filing It Yourself: UAE Clinics Will Now Handle Your Sick Leave Attestation — Read here: https://marketclock.live/uae-sick-leave.html";
+      window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+    }
+
+    function copyPageLink() {
+      navigator.clipboard.writeText("https://marketclock.live/uae-sick-leave.html");
+      const btn = document.getElementById("copy-btn");
+      btn.textContent = "✅ Link Copied!";
+      setTimeout(() => { btn.textContent = "🔗 Copy Link"; }, 2500);
+    }
+  </script>
+</body>
+</html>
