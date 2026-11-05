@@ -14,9 +14,9 @@
   </script>
 
   <!-- PRIMARY SEO META TAGS -->
-  <title>MarketClock.live — Trader Session Clock, Bell Alarms, Risk Calculator & Live News</title>
-  <meta name="description" content="Free all-in-one day trader workstation: Live NYSE, London, Dubai & Tokyo bell countdowns with audio alarms, 24h session overlap map, position size calculator, breaking news reader, and charts.">
-  <meta name="keywords" content="stock market clock with alarm, trading session overlap clock, NYSE opening bell sound countdown, position size calculator stocks, live stock market news, live market terminal">
+  <title>MarketClock.live — Trader Session Clock, Bell Alarms, Risk Calculator & UAE/Global News</title>
+  <meta name="description" content="Free all-in-one day trader workstation & news hub: Live NYSE, London, Dubai & Tokyo bell countdowns with audio alarms, 24h session overlap map, risk calculator, and UAE & global news.">
+  <meta name="keywords" content="stock market clock with alarm, trading session overlap clock, NYSE opening bell sound countdown, position size calculator stocks, UAE news, Dubai market news">
   <meta name="author" content="MarketClock.live">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://marketclock.live/">
@@ -26,8 +26,8 @@
   <link rel="apple-touch-icon" href="/favicon.svg">
   <meta name="theme-color" content="#070b19">
   <meta property="og:image" content="https://marketclock.live/og-preview.png">
-  <meta property="og:title" content="MarketClock.live — Trader Workstation: Bell Alarms, Session Map & Live News">
-  <meta property="og:description" content="Never miss an opening bell or breaking market headline again. Live session overlap map, audible bell alarms, position sizer, and visual news reader.">
+  <meta property="og:title" content="MarketClock.live — Trader Workstation & Featured UAE/Global News">
+  <meta property="og:description" content="Live session overlap map, audible bell alarms, position sizer, and featured UAE & global news briefings.">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,18 +39,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "MarketClock.live Trader Workstation",
+    "name": "MarketClock.live Trader Workstation & News Hub",
     "url": "https://marketclock.live/",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Audible Opening and Closing Bell Alarms",
-      "24-Hour Global Trading Session Overlap Visualizer",
-      "Real-Time Position Size and Stop-Loss Risk Calculator",
-      "Live Streaming Stock and Crypto Watchlist with TradingView Charts",
-      "In-App Visual Breaking Financial News Reader"
-    ]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
 
@@ -131,7 +124,7 @@
             MARKET<span class="bg-gradient-to-r from-[#11cdef] to-[#2dce89] bg-clip-text text-transparent">CLOCK</span>
             <span class="text-[10px] font-mono font-bold bg-[#5e72e4]/20 text-[#11cdef] border border-[#11cdef]/30 px-1.5 py-0.5 rounded-md">PRO</span>
           </div>
-          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">SESSION MAP • BELL ALARMS • RISK SIZER</p>
+          <p class="text-[10px] text-slate-400 font-medium tracking-wide mt-0.5">SESSION MAP • BELL ALARMS • NEWS DESK</p>
         </div>
       </a>
 
@@ -140,7 +133,7 @@
         <div class="hidden lg:flex items-center gap-4 text-xs font-semibold text-slate-400 mr-2">
           <a href="#overlap-section" class="hover:text-white transition">24H Overlap Map</a>
           <a href="#calculator-section" class="text-[#2dce89] hover:text-white transition">🧮 Risk Calculator</a>
-          <a href="#news-section" class="text-[#11cdef] hover:text-white transition">📰 Visual News</a>
+          <a href="#news-section" class="text-amber-400 hover:text-white transition">🌟 Featured & UAE News</a>
           <a href="/nyse-countdown.html" class="hover:text-white transition">🇺🇸 NYSE</a>
           <a href="/dfm-dubai-market-hours.html" class="hover:text-white transition">🇦🇪 DFM</a>
         </div>
@@ -409,7 +402,7 @@
     </div>
 
     <!-- =================================================================== -->
-    <!-- SECTION 3: TRADINGVIEW CHART + VISUAL NEWS TERMINAL WITH PICTURES   -->
+    <!-- SECTION 3: TRADINGVIEW CHART + CUSTOM EDITORIAL & MARKET WIRE       -->
     <!-- =================================================================== -->
     <section id="chart-section" class="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
       <!-- Chart (7 Cols) -->
@@ -433,29 +426,35 @@
         <div class="w-full h-[500px] sm:h-[580px] rounded-2xl overflow-hidden border border-white/10 bg-[#050814]" id="tv-chart-container"></div>
       </div>
 
-      <!-- UPGRADED VISUAL BREAKING NEWS WIRE WITH IMAGES & IN-APP READER (5 Cols) -->
+      <!-- UPGRADED VISUAL NEWS WIRE WITH "FEATURED / UAE" SUBCATEGORY + PUBLISHER -->
       <div id="news-section" class="lg:col-span-5 argon-glass rounded-3xl p-4 sm:p-5 flex flex-col h-[580px] sm:h-[650px]">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-3 mb-3 gap-2">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-2.5">
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2dce89] animate-ping"></span>
             <div>
-              <h2 class="text-base font-extrabold text-white leading-none">Visual Market Wire</h2>
-              <span class="text-[10px] text-slate-400">Click any story to read on-site</span>
+              <h2 class="text-base font-extrabold text-white leading-none">News & Editorial Wire</h2>
+              <span class="text-[10px] text-slate-400">Click any story to open reader</span>
             </div>
           </div>
 
-          <!-- NEWS CATEGORY FILTER PILLS -->
-          <div class="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-white/10 text-[11px] font-bold">
-            <button onclick="switchNewsCategory('general', this)" class="news-cat-btn px-2.5 py-1 rounded-lg bg-[#11cdef] text-slate-950 cursor-pointer transition">Top</button>
-            <button onclick="switchNewsCategory('crypto', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">Crypto</button>
-            <button onclick="switchNewsCategory('forex', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">Forex</button>
-            <button onclick="switchNewsCategory('merger', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">M&A</button>
-          </div>
+          <!-- PUBLISH NEW ARTICLE STUDIO BUTTON -->
+          <button onclick="openPublisherModal()" class="text-[11px] bg-gradient-to-r from-amber-400 to-[#2dce89] text-slate-950 font-extrabold px-3 py-1.5 rounded-xl shadow hover:opacity-95 transition cursor-pointer flex items-center gap-1">
+            ✍️ + Post Article
+          </button>
+        </div>
+
+        <!-- SUB-CATEGORY FILTER TABS (INCLUDING YOUR CUSTOM "FEATURED / UAE" TAB) -->
+        <div class="flex flex-wrap items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-white/10 text-[11px] font-bold mb-3">
+          <button onclick="switchNewsCategory('featured', this)" class="news-cat-btn px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 cursor-pointer transition">🌟 Featured / UAE</button>
+          <button onclick="switchNewsCategory('general', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">Top Wire</button>
+          <button onclick="switchNewsCategory('crypto', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">Crypto</button>
+          <button onclick="switchNewsCategory('forex', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">Forex</button>
+          <button onclick="switchNewsCategory('merger', this)" class="news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition">M&A</button>
         </div>
 
         <!-- SCROLLABLE VISUAL NEWS CARDS -->
         <div id="news-feed-container" class="space-y-3 overflow-y-auto pr-1 flex-grow">
-          <div class="text-slate-400 py-12 text-center text-xs">Loading visual financial news...</div>
+          <div class="text-slate-400 py-12 text-center text-xs">Loading visual news...</div>
         </div>
       </div>
     </section>
@@ -528,6 +527,7 @@
       <div class="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-400">
         <a href="/nyse-countdown.html" class="hover:text-[#11cdef] underline">NYSE Bell Countdown</a>
         <a href="/dfm-dubai-market-hours.html" class="hover:text-[#2dce89] underline">Dubai DFM Market Hours</a>
+        <button onclick="openPublisherModal()" class="hover:text-amber-400 underline cursor-pointer">Post Custom Article</button>
         <button onclick="document.getElementById('legal-modal').classList.remove('hidden')" class="hover:text-[#11cdef] underline cursor-pointer">Privacy & Terms</button>
         <a href="https://marketclock.live/sitemap.xml" class="hover:text-[#11cdef] underline">Sitemap</a>
       </div>
@@ -536,8 +536,7 @@
   </footer>
 
   <!-- ===================================================================== -->
-  <!-- 💰 IN-APP NEWS ARTICLE READER MODAL (WITH EMBEDDED AD UNIT!)          -->
-  <!-- Keeps visitors on MarketClock.live and shows an extra Ad per click!   -->
+  <!-- 💰 IN-APP NEWS ARTICLE READER MODAL (WITH FULL MULTI-PARAGRAPH VIEW)  -->
   <!-- ===================================================================== -->
   <div id="news-reader-modal" onclick="if(event.target === this) closeNewsModal()" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <article class="argon-glass max-w-2xl w-full rounded-3xl overflow-hidden max-h-[90vh] flex flex-col border border-[#11cdef]/30 shadow-2xl">
@@ -545,7 +544,7 @@
       <!-- Modal Top Bar -->
       <div class="flex items-center justify-between px-6 py-4 bg-slate-950/80 border-b border-white/10">
         <div class="flex items-center gap-2">
-          <span id="modal-news-source" class="text-[11px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-[#11cdef]/20 text-[#11cdef]">SOURCE</span>
+          <span id="modal-news-source" class="text-[11px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30">SOURCE</span>
           <span id="modal-news-time" class="text-xs font-mono text-slate-400">--</span>
         </div>
         <button onclick="closeNewsModal()" class="w-8 h-8 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold flex items-center justify-center cursor-pointer transition">
@@ -565,16 +564,16 @@
           Article Headline
         </h2>
 
-        <!-- Article Summary / Briefing Text -->
+        <!-- Article Full Story / Executive Briefing -->
         <div class="bg-slate-950/60 border border-white/10 rounded-2xl p-5">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-[#2dce89] font-bold block mb-2">⚡ Executive Market Briefing</span>
-          <p id="modal-news-summary" class="text-sm sm:text-base text-slate-200 leading-relaxed">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#2dce89] font-bold block mb-2.5">⚡ Full Article & Briefing</span>
+          <div id="modal-news-summary" class="text-sm sm:text-base text-slate-200 leading-relaxed space-y-3 whitespace-pre-line">
             Summary text...
-          </p>
+          </div>
         </div>
 
         <!-- =============================================================== -->
-        <!-- 💰 HIGH-CTR IN-ARTICLE AD SLOT (Triggers every time user reads) -->
+        <!-- 💰 HIGH-CTR IN-ARTICLE AD SLOT (Unit 2460097)                   -->
         <!-- =============================================================== -->
         <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-3 text-center">
           <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold block mb-1">Sponsored Financial Partner</span>
@@ -586,14 +585,76 @@
         <!-- Action Buttons: Stay on Site vs Read Original -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-white/10">
           <button onclick="closeNewsModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#2dce89] to-[#11cdef] text-slate-950 font-extrabold text-xs sm:text-sm cursor-pointer transition">
-            ← Back to Live Charts & Clock
+            ← Back to Live Terminal
           </button>
           <a id="modal-news-url" href="#" target="_blank" rel="noopener nofollow" class="w-full sm:w-auto text-center px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold transition">
-            Read Full Publisher Dispatch ↗
+            View Original Source Link ↗
           </a>
         </div>
       </div>
     </article>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ✍️ CUSTOM ARTICLE PUBLISHER STUDIO MODAL                             -->
+  <!-- Lets you write/paste articles, preview immediately & export for GitHub-->
+  <!-- ===================================================================== -->
+  <div id="publisher-modal" onclick="if(event.target === this) closePublisherModal()" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="argon-glass max-w-2xl w-full rounded-3xl overflow-hidden max-h-[92vh] flex flex-col border border-amber-400/40 shadow-2xl">
+      <div class="flex items-center justify-between px-6 py-4 bg-slate-950/80 border-b border-white/10">
+        <div>
+          <h3 class="text-base font-extrabold text-white flex items-center gap-2">
+            <span>✍️</span> Publish Custom Article to "Featured / UAE"
+          </h3>
+          <p class="text-[11px] text-slate-400">Post your own articles with cover photos into the ad-supported reader</p>
+        </div>
+        <button onclick="closePublisherModal()" class="w-8 h-8 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold flex items-center justify-center cursor-pointer">✕</button>
+      </div>
+
+      <form id="custom-article-form" class="p-6 overflow-y-auto space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">Article Headline *</label>
+          <input id="pub-headline" type="text" required placeholder="e.g. No more filing it yourself: UAE clinics will now handle your sick leave attestation" class="w-full bg-slate-950 border border-white/15 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white text-sm">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">Source / Category Badge *</label>
+            <input id="pub-source" type="text" value="UAE PULSE • TGFM" required class="w-full bg-slate-950 border border-white/15 focus:border-amber-400 rounded-xl px-3.5 py-2 text-white">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">Cover Photo URL (Unsplash / Direct Image URL)</label>
+            <input id="pub-image" type="url" placeholder="https://images.unsplash.com/..." class="w-full bg-slate-950 border border-white/15 focus:border-amber-400 rounded-xl px-3.5 py-2 text-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">Original Source URL (Optional credit link)</label>
+          <input id="pub-url" type="url" placeholder="https://theglobalfilipinomagazine.com/..." class="w-full bg-slate-950 border border-white/15 focus:border-amber-400 rounded-xl px-3.5 py-2 text-white">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">Full Article Body / Multi-Paragraph Text *</label>
+          <textarea id="pub-summary" rows="6" required placeholder="Paste or write your full article paragraphs here..." class="w-full bg-slate-950 border border-white/15 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white text-sm leading-relaxed"></textarea>
+        </div>
+
+        <!-- Generated Code Box for Permanent GitHub Copy-Paste -->
+        <div id="pub-code-box" class="hidden bg-slate-950 border border-[#2dce89]/40 rounded-2xl p-3.5 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-[#2dce89]">✅ Published! To make permanent for all visitors, paste this in CUSTOM_ARTICLES in index.html:</span>
+            <button type="button" onclick="copyGeneratedArticleCode()" class="bg-[#2dce89] text-slate-950 font-extrabold px-2.5 py-1 rounded-lg text-[10px] cursor-pointer">📋 Copy Snippet</button>
+          </div>
+          <pre id="pub-code-output" class="font-mono text-[10px] text-slate-300 overflow-x-auto bg-slate-900 p-2.5 rounded-xl"></pre>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-2 border-t border-white/10">
+          <button type="button" onclick="closePublisherModal()" class="px-4 py-2 rounded-xl bg-slate-900 text-slate-300 font-semibold cursor-pointer">Cancel</button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-[#2dce89] text-slate-950 font-extrabold text-xs sm:text-sm cursor-pointer shadow-lg">
+            🚀 Publish Article & Generate Code
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- PRIVACY MODAL -->
@@ -618,7 +679,41 @@
     let soundArmed = false;
     let lastExStates = {};
     let currentNewsItems = [];
-    let currentNewsCategory = 'general';
+    let currentNewsCategory = 'featured';
+
+    // =========================================================================
+    // 🌟 YOUR PERMANENT CUSTOM ARTICLES DATABASE (Edit or add articles here!)
+    // Pre-loaded with your UAE MoHAP Sick Leave Attestation article example
+    // =========================================================================
+    const CUSTOM_ARTICLES = [
+      {
+        isCustom: true,
+        source: "UAE PULSE • TGFM",
+        datetime: Math.floor(Date.now() / 1000) - 1800,
+        headline: "No more filing it yourself: UAE clinics will now handle your sick leave attestation",
+        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80",
+        url: "https://theglobalfilipinomagazine.com/no-more-filing-it-yourself-uae-clinics-will-now-handle-your-sick-leave-attestation/",
+        summary: `Patients in the UAE will no longer have to file their own sick leave attestation requests at facilities licensed by the Ministry of Health and Prevention (MoHAP). Under the new streamlined process, the clinic or hospital that issued the sick leave will now submit and handle the attestation request directly on the patient's behalf.\n\nThe same automated arrangement also extends to patient companion leave, eliminating unnecessary paperwork and individual portal submissions for residents and employees across the Emirates.\n\nOfficials noted that this upgrade is part of the UAE government's Zero Bureaucracy programme, where success is measured by visible gains in customer experience, faster digital turnarounds, and operational efficiency across healthcare and public services.`
+      },
+      {
+        isCustom: true,
+        source: "DUBAI MARKET DESK",
+        datetime: Math.floor(Date.now() / 1000) - 7200,
+        headline: "Why the 5:30 PM GST Dubai-to-Wall Street Overlap is the Most Profitable Hour for UAE Traders",
+        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
+        url: "https://marketclock.live/dfm-dubai-market-hours.html",
+        summary: `For retail and institutional traders residing in Dubai and Abu Dhabi, the late afternoon window between 5:30 PM and 8:30 PM GST represents the single highest-liquidity trading window of the 24-hour cycle.\n\nDuring these three hours, European desks in London are executing their closing auctions while the New York Stock Exchange (NYSE) and NASDAQ ring their opening bells—creating tight spreads and decisive breakouts across US tech equities, gold (XAU/USD), and major currency pairs.`
+      }
+    ];
+
+    // Load any extra custom articles saved in browser localStorage via the "+ Post Article" studio
+    function getAllCustomArticles() {
+      let localSaved = [];
+      try {
+        localSaved = JSON.parse(localStorage.getItem('userCustomArticles') || '[]');
+      } catch (e) {}
+      return [...localSaved, ...CUSTOM_ARTICLES];
+    }
 
     // 1. WEB AUDIO API: SYNTHESIZED NYSE OPENING/CLOSING BELL CHIME
     function playTradingBellChime() {
@@ -1066,7 +1161,7 @@
     setInterval(fetchFinnhubSnapshots, 60000);
 
     // =========================================================================
-    // 5. VISUAL NEWS ENGINE WITH THUMBNAIL IMAGES & ON-SITE ARTICLE READER
+    // 5. VISUAL NEWS ENGINE + "FEATURED / UAE" SUBCATEGORY + PUBLISHER STUDIO
     // =========================================================================
     window.switchNewsCategory = function(cat, btnEl) {
       currentNewsCategory = cat;
@@ -1074,67 +1169,93 @@
         b.className = 'news-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white cursor-pointer transition';
       });
       if (btnEl) {
-        btnEl.className = 'news-cat-btn px-2.5 py-1 rounded-lg bg-[#11cdef] text-slate-950 cursor-pointer transition';
+        btnEl.className = cat === 'featured'
+          ? 'news-cat-btn px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 cursor-pointer transition'
+          : 'news-cat-btn px-2.5 py-1 rounded-lg bg-[#11cdef] text-slate-950 cursor-pointer transition';
       }
       fetchMarketNews(cat);
     };
 
+    function renderNewsCardsList(items) {
+      const container = document.getElementById('news-feed-container');
+      container.innerHTML = '';
+      items.forEach((item, index) => {
+        const timeAgo = Math.max(1, Math.floor((Date.now() / 1000 - item.datetime) / 60));
+        const timeLabel = timeAgo < 60 ? `${timeAgo}m ago` : `${Math.floor(timeAgo / 60)}h ago`;
+        const hasImg = item.image && item.image.startsWith('http');
+
+        container.innerHTML += `
+          <div onclick="openNewsModal(${index})" class="cursor-pointer group bg-slate-950/80 hover:bg-slate-900 border ${item.isCustom ? 'border-amber-400/40' : 'border-white/5'} hover:border-[#11cdef]/50 p-3 rounded-2xl transition flex gap-3.5 items-center">
+            <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#5e72e4]/30 via-[#11cdef]/20 to-[#2dce89]/30 border border-white/10 relative">
+              ${hasImg ? `
+                <img src="${item.image}" alt="" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'">
+              ` : `
+                <div class="w-full h-full flex items-center justify-center font-mono text-xs font-extrabold text-[#11cdef]">NEWS</div>
+              `}
+            </div>
+            <div class="flex-grow min-w-0">
+              <div class="flex items-center justify-between text-[10px] text-slate-400 mb-1">
+                <span class="font-extrabold ${item.isCustom ? 'text-amber-400' : 'text-[#11cdef]'} uppercase truncate max-w-[160px]">
+                  ${item.isCustom ? '★ ' : ''}${item.source || 'MARKET WIRE'}
+                </span>
+                <span class="font-mono text-slate-500">${timeLabel}</span>
+              </div>
+              <h3 class="font-bold text-slate-100 group-hover:text-[#11cdef] text-xs sm:text-sm leading-snug line-clamp-2 transition">
+                ${item.headline}
+              </h3>
+              <span class="inline-block text-[10px] text-[#2dce89] font-semibold mt-1">Read Full Story →</span>
+            </div>
+          </div>
+        `;
+      });
+    }
+
     async function fetchMarketNews(category = currentNewsCategory) {
       const container = document.getElementById('news-feed-container');
+      const customList = getAllCustomArticles();
+
+      // If "Featured / UAE" tab is selected, show custom articles immediately + top general stories below
+      if (category === 'featured') {
+        currentNewsItems = [...customList];
+        renderNewsCardsList(currentNewsItems);
+        try {
+          const res = await fetch(`https://finnhub.io/api/v1/news?category=general&token=${FINNHUB_API_KEY}`);
+          const apiNews = await res.json();
+          if (Array.isArray(apiNews)) {
+            currentNewsItems = [...customList, ...apiNews.slice(0, 10)];
+            renderNewsCardsList(currentNewsItems);
+          }
+        } catch (e) {}
+        return;
+      }
+
       container.innerHTML = '<div class="text-slate-400 py-12 text-center text-xs animate-pulse">Fetching latest visual dispatches...</div>';
       try {
         const res = await fetch(`https://finnhub.io/api/v1/news?category=${encodeURIComponent(category)}&token=${FINNHUB_API_KEY}`);
         const news = await res.json();
         if (Array.isArray(news) && news.length > 0) {
-          currentNewsItems = news.slice(0, 16);
-          container.innerHTML = '';
-          currentNewsItems.forEach((item, index) => {
-            const timeAgo = Math.max(1, Math.floor((Date.now() / 1000 - item.datetime) / 60));
-            const timeLabel = timeAgo < 60 ? `${timeAgo}m ago` : `${Math.floor(timeAgo / 60)}h ago`;
-            const hasImg = item.image && item.image.startsWith('http');
-
-            container.innerHTML += `
-              <div onclick="openNewsModal(${index})" class="cursor-pointer group bg-slate-950/75 hover:bg-slate-900 border border-white/5 hover:border-[#11cdef]/50 p-3 rounded-2xl transition flex gap-3.5 items-center">
-                <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#5e72e4]/30 via-[#11cdef]/20 to-[#2dce89]/30 border border-white/10 relative">
-                  ${hasImg ? `
-                    <img src="${item.image}" alt="" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'">
-                  ` : `
-                    <div class="w-full h-full flex items-center justify-center font-mono text-xs font-extrabold text-[#11cdef]">NEWS</div>
-                  `}
-                </div>
-                <div class="flex-grow min-w-0">
-                  <div class="flex items-center justify-between text-[10px] text-slate-400 mb-1">
-                    <span class="font-extrabold text-[#11cdef] uppercase truncate max-w-[130px]">${item.source || 'MARKET WIRE'}</span>
-                    <span class="font-mono text-slate-500">${timeLabel}</span>
-                  </div>
-                  <h3 class="font-bold text-slate-100 group-hover:text-[#11cdef] text-xs sm:text-sm leading-snug line-clamp-2 transition">
-                    ${item.headline}
-                  </h3>
-                  <span class="inline-block text-[10px] text-[#2dce89] font-semibold mt-1">Read Briefing →</span>
-                </div>
-              </div>
-            `;
-          });
+          currentNewsItems = category === 'general' ? [...customList.slice(0, 1), ...news.slice(0, 15)] : news.slice(0, 16);
+          renderNewsCardsList(currentNewsItems);
         }
       } catch (err) {
-        container.innerHTML = '<div class="text-slate-500 py-8 text-center text-xs">News feed temporarily unavailable.</div>';
+        currentNewsItems = [...customList];
+        renderNewsCardsList(currentNewsItems);
       }
     }
-    fetchMarketNews('general');
+    fetchMarketNews('featured');
     setInterval(() => fetchMarketNews(currentNewsCategory), 180000);
 
     window.openNewsModal = function(idx) {
       const item = currentNewsItems[idx];
       if (!item) return;
 
-      document.getElementById('modal-news-source').textContent = item.source || 'FINANCIAL WIRE';
+      document.getElementById('modal-news-source').textContent = item.source || 'EDITORIAL DESK';
       const dateStr = new Date(item.datetime * 1000).toLocaleString('en-US', {
-        month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
       });
       document.getElementById('modal-news-time').textContent = dateStr;
       document.getElementById('modal-news-headline').textContent = item.headline;
 
-      // Clean summary text or provide an intelligent fallback if publisher summary is empty
       const cleanSummary = item.summary && item.summary.trim().length > 10
         ? item.summary
         : `${item.headline} — Published via ${item.source}. Monitor related equity and currency pairs on the live chart terminal for real-time volatility impact.`;
@@ -1161,8 +1282,50 @@
       document.getElementById('news-reader-modal').classList.add('hidden');
     };
 
+    // Publisher Studio Modal Logic
+    window.openPublisherModal = function() {
+      document.getElementById('publisher-modal').classList.remove('hidden');
+    };
+    window.closePublisherModal = function() {
+      document.getElementById('publisher-modal').classList.add('hidden');
+    };
+
+    document.getElementById('custom-article-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newArt = {
+        isCustom: true,
+        source: document.getElementById('pub-source').value.trim() || 'FEATURED DESK',
+        datetime: Math.floor(Date.now() / 1000),
+        headline: document.getElementById('pub-headline').value.trim(),
+        image: document.getElementById('pub-image').value.trim() || 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80',
+        url: document.getElementById('pub-url').value.trim() || 'https://marketclock.live/',
+        summary: document.getElementById('pub-summary').value.trim()
+      };
+
+      let saved = [];
+      try { saved = JSON.parse(localStorage.getItem('userCustomArticles') || '[]'); } catch (err) {}
+      saved.unshift(newArt);
+      localStorage.setItem('userCustomArticles', JSON.stringify(saved));
+
+      // Show permanent JSON snippet for GitHub
+      const codeStr = JSON.stringify(newArt, null, 2) + ',';
+      document.getElementById('pub-code-output').textContent = codeStr;
+      document.getElementById('pub-code-box').classList.remove('hidden');
+
+      fetchMarketNews('featured');
+    });
+
+    window.copyGeneratedArticleCode = function() {
+      const code = document.getElementById('pub-code-output').textContent;
+      navigator.clipboard.writeText(code);
+      alert('Copied! Paste this block inside the CUSTOM_ARTICLES list in index.html on GitHub to make it permanent for all visitors.');
+    };
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNewsModal();
+      if (e.key === 'Escape') {
+        closeNewsModal();
+        closePublisherModal();
+      }
     });
 
     function connectFinnhubWS() {
